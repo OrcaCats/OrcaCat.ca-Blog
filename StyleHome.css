@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#taskbar {
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    color: white;
+    transition: top 0.3s ease-in-out;
+}
+#taskbar a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+#taskbar a:hover {
+    /*background-color: #575757;*/
+    color: #575757;
+}
+.container {
+    display: flex;
+    margin-top: 60px; /* Space for the fixed taskbar */
+}
+.main-content {
+    margin-top: 70px; /*prevemnts overlap with nav*/
+    flex: 3;
+    padding: 20px;
+    height: 2000px;
+}
+.sidebar {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+}
+.post {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+h1, h2 {
+    color: #333;
+}
