@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            border-color: aqua; /* Border color */
+            border-style: solid; /* Adds visible border */
+            border-width: 5px; /* Sets border thickness */
+        }
+        .main {
+            background-color: yellow;
+            color: rgb(255, 0, 179); /* Text color */
+            height: 200px;
+            width: 100;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        Hello world
+    </div>
+    <script>
+        const colors = [
+            "blue",
+            "green",
+            "red",
+            "yellow"
+        ];
+        let iteritave = 0;
+        function changeColour(){
+            document.querySelector('.main').style.backgroundColor = colors[iteritave];
+            iteritave=(iteritave+1)%colors.length;
+
+        }
+    </script>
+    <button onclick="changeColour()">Click me to change color!</button>
+</body>
+</html>
