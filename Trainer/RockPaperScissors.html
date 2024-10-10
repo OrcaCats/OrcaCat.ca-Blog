@@ -12,8 +12,22 @@
         justify-content: center;
     }
     .game{
-        color: greenyellow;
-
+        background-color: greenyellow;
+        display: flex;
+    }
+    .gameElement{
+        width: 50%;
+        padding: 20px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .gameButton{}
+    .out{
+        padding: 40px;
     }
 </style>
 </head>
@@ -23,11 +37,50 @@
     </div>
     <div class="game">
         <div class = "gameElement">
-
+            <div>
+            <button class="gameButton" id="rock" onclick="onclick">Rock</button>
+            <button class="gameButton" id="paper" onclick="onclick">Paper</button>
+            <button class="gameButton" id="scissors" onclick="onclick">Scissors</button>
+            </div>
+            <div class="out">
+                <p id="output">
+                    The computer:...
+                </p>
+            </div>
+            <div class="out">
+                <p id="result">
+                    Who won...
+                </p>
+            </div>
         </div>
         <div class = "gameElement">
-
+            ereas
         </div>
     </div>
+    <script>
+        function makeResult(event){
+            const clicked = event.target;
+            const possibilities = ["rock", "paper", "scissors"]
+            const output = document.getElementById('output');
+            const result = document.getElementById('result');
+            const computer = (Math.floor(Math.random()*3))
+            output.textContent = `the computer did ${possibilities[computer]}`;
+            if (possibilities[computer] === event.target.id) {
+            result.textContent = `tie!`;
+            } else if (possibilities[computer] === "rock" && event.target.id === "paper") {
+            result.textContent = `You win!`;
+            } else if (possibilities[computer] === "paper" && event.target.id === "scissors") {
+            result.textContent = `You win!`;
+            } else if (possibilities[computer] === "scissors" && event.target.id === "rock") {
+            result.textContent = `You win!`;
+            } else {
+            result.textContent = `you loose!`;
+            }
+        }
+
+        document.querySelectorAll("button[id]").forEach(button => {
+            button.addEventListener("click", makeResult)
+        })
+    </script>
 </body>
 </html>
