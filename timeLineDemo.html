@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline with Images</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #007bff;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      position: relative;
+      width: 45%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -13px;
+      background-color: white;
+      border: 4px solid #007bff;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      flex-direction: row;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      flex-direction: row-reverse;
+    }
+
+    .timeline-item .date {
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item .content {
+      color: #333;
+      padding: 0 20px;
+    }
+
+    .timeline-item img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        width: 100%;
+        left: 0;
+      }
+
+      .timeline::after {
+        left: 10px;
+      }
+
+      .timeline-item::after {
+        left: 0;
+        right: auto;
+      }
+
+      .timeline-item img {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="timeline-item left">
+    <img src="https://via.placeholder.com/100" alt="Event Image">
+    <div class="content">
+      <div class="date">2023</div>
+      <h3>Project Kickoff</h3>
+      <p>We initiated the project with a full team and defined our objectives.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item right">
+    <img src="https://via.placeholder.com/100" alt="Event Image">
+    <div class="content">
+      <div class="date">2024</div>
+      <h3>Development Phase</h3>
+      <p>Completed the development phase and started testing the product.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item left">
+    <img src="https://via.placeholder.com/100" alt="Event Image">
+    <div class="content">
+      <div class="date">2025</div>
+      <h3>Launch</h3>
+      <p>Successfully launched the product in the market with great reception.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
