@@ -13,7 +13,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            height: 100%;
+            height: 100vh;
         }
 
         /* Taskbar style */
@@ -23,23 +23,35 @@
             align-items: center;
             background-color: #333;
             color: white;
-<<<<<<< Updated upstream
             padding: 10px;
-            height: 15%;
-=======
-            height: 50px;
+            height: 10%;
             border: 2px solid black;
->>>>>>> Stashed changes
+        }
+
+        .taskbarElement{
+            color: white;
+            font-size: 40px;
+        }
+
+        .date{
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon{
+            width: 70px;
+            height: 70px;
         }
 
         /* Main container for grid */
         .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr) 2fr 1fr; /* Adjusted column count */
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0; /* No gap between grid items */
-    border: 2px solid black;
-}
+            height: 90%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) 2fr 1fr; /* Adjusted column count */
+            grid-template-rows: repeat(2, 1fr);
+            gap: 0; /* No gap between grid items */
+            border: 2px solid black;
+        }
 
         .box {
             background-color: #4CAF50;
@@ -83,28 +95,64 @@
             grid-column: 6;
             grid-row: 2;
         }
-
     </style>
 </head>
 <body>
 
     <!-- Flexbox Taskbar -->
     <div class="taskbar">
-        <div><!--Dates-->
-            <p id="dateDisplay">date</p>
-            <script type="module">
-                import { updateDateText } from './Dates.js';
+
+        <!-- Display date and time -->
+        <div class="date">
+            <img id="weather-icon" class="weather-icon">
+            <p id="dateDisplay" class="taskbarElement">Loading...</p>
+
+            <script>
+                function updateDateText() {
+                    const dateDisplay = document.getElementById('dateDisplay');
+                    const now = new Date();
+                    const options = { 
+                        weekday: 'short', 
+                        month: 'short', 
+                        day: 'numeric', 
+                        hour: '2-digit', 
+                        minute: '2-digit'
+                    };
+                    dateDisplay.textContent = now.toLocaleDateString('en-US', options);
+                }
+
+                async function fetchWeather() {
+                    const apiKey = "9b5c337b46336b6023b83e5bd3620566";
+                    const city = "lat=49.1044&lon=-122.8011";
+                    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?${city}&appid=${apiKey}&units=metric`;
+                    
+                    try {
+                        const response = await fetch(weatherUrl);
+                        const weatherData = await response.json();
+
+                        const iconCode = weatherData.weather[0].icon;
+                        const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+                        document.getElementById("weather-icon").src = iconUrl;
+                    } 
+                    catch (error) {
+                        console.error("Error fetching weather data: ", error);
+                    }
+                }
+                // Update the date and time every second
                 window.onload = () => {
-                  updateDateText('dateDisplay');
+                    updateDateText();
+                    fetchWeather();
                 };
-              </script>
-        </div>
-        <div><!--block-->
+                setInterval(updateDateText, 60000);
+            </script>
 
         </div>
-        <div><!--weather-->
 
+        <!-- block -->
+        <div class="blockOrder">
+            <p id="blocks" class="taskbarElement">Loading</p>
         </div>
+        <div><!-- weather --></div>
         <div>Menu</div>
     </div>
 
