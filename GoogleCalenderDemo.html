@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Events for Today</title>
+</head>
+<body>
+    <h1>Google Calendar Events for Today</h1>
+    <button id="authorize_button">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+    <div id="content"></div>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        const CLIENT_ID = '805773530317-ojf1lr8vendohnmbts1g7vlb667mn0sc.apps.googleusercontent.com';
+        const API_KEY = 'AIzaSyDE53LHKj3N6xzqytuzvxCOLV9_j1jMcLE';
+        const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+        const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+
+        const authorizeButton = document.getElementById('authorize_button');
+        const signoutButton = document.getElementById('signout_button');
+        const content = document.getElementById('content');
+        let tokenClient;
+        let gapiInited = false;
+        let gisInited = false;
+
+        function gapiLoaded() {
+            gapi.load('client', initializeGapiClient);
+        }
+
+        async function initializeGapiClient() {
+            await gapi.client.init({
+                apiKey: API_KEY,
+                discoveryDocs: DISCOVERY_DOCS,
+            });
+            gapiInited = true;
+            maybeEnableButtons();
+        }
+
+        function gisLoaded() {
+            tokenClient = google.accounts.oauth2.initTokenClient({
+                client_id: CLIENT_ID,
+                scope: SCOPES,
+                callback: '', // Will be set later in handleAuthClick
+            });
+            gisInited = true;
+            maybeEnableButtons();
+        }
+
+        function maybeEnableButtons() {
+            if (gapiInited && gisInited) {
+                authorizeButton.style.display = 'block';
+                authorizeButton.onclick = handleAuthClick;
+                signoutButton.onclick = handleSignoutClick;
+            }
+        }
+
+        function handleAuthClick() {
+            tokenClient.callback = async (response) => {
+                if (response.error) {
+                    console.error(response);
+                    return;
+                }
+                authorizeButton.style.display = 'none';
+                signoutButton.style.display = 'block';
+                await listUpcomingEvents();
+            };
+
+            if (gapi.client.getToken() === null) {
+                // Prompt the user to select a Google account and authorize
+                tokenClient.requestAccessToken({ prompt: 'consent' });
+            } else {
+                // Skip the prompt and use the stored token
+                tokenClient.requestAccessToken({ prompt: '' });
+            }
+        }
+
+        function handleSignoutClick() {
+            gapi.client.setToken('');
+            authorizeButton.style.display = 'block';
+            signoutButton.style.display = 'none';
+            content.innerHTML = '';
+        }
+
+        async function listUpcomingEvents() {
+            const today = new Date();
+            const start = new Date(today.setHours(0, 0, 0, 0)).toISOString();
+            const end = new Date(today.setHours(23, 59, 59, 999)).toISOString();
+
+            try {
+                const response = await gapi.client.calendar.events.list({
+                    'calendarId': 'primary',
+                    'timeMin': start,
+                    'timeMax': end,
+                    'showDeleted': false,
+                    'singleEvents': true,
+                    'orderBy': 'startTime'
+                });
+                const events = response.result.items;
+                if (events.length > 0) {
+                    let eventList = '<ul>';
+                    events.forEach(event => {
+                        const startTime = event.start.dateTime || event.start.date;
+                        eventList += `<li>${startTime}: ${event.summary}</li>`;
+                    });
+                    eventList += '</ul>';
+                    content.innerHTML = eventList;
+                } else {
+                    content.innerHTML = 'No events found for today.';
+                }
+            } catch (error) {
+                console.error("Error fetching events:", error);
+                content.innerHTML = 'Error fetching events.';
+            }
+        }
+
+        window.onload = function() {
+            gapiLoaded();
+            gisLoaded();
+        };
+    </script>
+</body>
+</html>
