@@ -9,17 +9,19 @@
     <link rel="stylesheet" href="taskBarStyles.css">
     <link rel="stylesheet" href="footerStyles.css">
     <style>
-      
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .container {
     display: flex;
     width: 100%;
-    /*margin-top: 100px; /* Space for the fixed taskbar */
+    flex-direction: column;
 }
-.main-content {
-    /*margin-top: 70px; /*prevemnts overlap with nav
-    flex: 3;*/
-    height: 2000px;
-}
+
 .post {
     margin-bottom: 20px;
     padding: 15px;
@@ -62,9 +64,11 @@ h1, h2 {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 0;
-  }
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
-  .timeline::after {
+.timeline::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -73,9 +77,21 @@ h1, h2 {
     bottom: 0;
     left: 50%;
     margin-left: -3px;
-  }
+}
 
-  .timeline-item {
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 4px solid #007bff;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item {
     display: flex;
     align-items: center;
     padding: 20px;
@@ -84,69 +100,70 @@ h1, h2 {
     position: relative;
     width: 45%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 20px 0;
-  }
+}
 
-  .timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -13px;
-    background-color: white;
-    border: 4px solid #007bff;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  .timeline-item.left {
+.timeline-item.left {
     left: 0;
     flex-direction: row;
-  }
+    margin-bottom: -90px; /* 20px spacing between items on the left */
+}
+.timeline-item.leftLast {
+    left: 0;
+    flex-direction: row;
+    margin-bottom: 0px; /* 20px spacing between items on the left */
+}
 
-  .timeline-item.right {
+.timeline-item.right {
     left: 50%;
     flex-direction: row-reverse;
-  }
+    margin-bottom: -90px; /* 20px spacing between items on the right */
+}
 
-  .timeline-item .date {
+/* Adjust positioning of the blue circle for right items */
+.timeline-item.right::after {
+    left: 6px; /* Align blue circle with the timeline */
+}
+.timeline-item.right::after {
+    left: -16px; /* Align blue circle with the timeline */
+}
+
+.timeline-item .date {
     font-weight: bold;
     color: #007bff;
     margin-bottom: 10px;
-  }
+}
 
-  .timeline-item .content {
+.timeline-item .content {
     color: #333;
     padding: 0 20px;
-  }
+}
 
-  .timeline-item img {
+.timeline-item img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .timeline-item {
-      width: 100%;
-      left: 0;
+        width: 100%;
+        left: 0;
     }
 
     .timeline::after {
-      left: 10px;
+        left: 10px;
     }
 
     .timeline-item::after {
-      left: 0;
-      right: auto;
+        left: 0;
+        right: auto;
     }
 
     .timeline-item img {
-      display: none;
+        display: none;
     }
-  }
+}
 
   .ProjectTimelineBuffer {
     height: 100px;
@@ -159,6 +176,76 @@ h1, h2 {
   .title1{
     font-size: 50px;
   }
+  .site-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Main content takes up remaining space above footer */
+.main-content {
+    flex-grow: 1;
+}
+
+.footer {
+    background-color: #333;
+    color: #f2f2f2;
+    padding: 20px;
+    width: 100%;
+    clear: both;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section a img {
+    margin: 0 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #777;
+    font-size: 0.8em;
+    color: #ccc;
+}
     </style>
 </head>
 <body>
@@ -170,19 +257,19 @@ h1, h2 {
         <a href="blog.html" class="taskbarLink">BLOG</a>
     </div>
     <div class="container">
-        <div class="main-content">
-            <div class="Landing">
+      <div class="main-content">
+        <div class="Landing">
                 <img src="assets/landerDemo2.png" alt="demo image" class="landingImage">
-            </div>
-            <div class="ProjectTimelineBuffer">
+        </div>
+        <div class="ProjectTimelineBuffer">
               <h1 class="title1">Recent Accomplishments</h1>
-            </div>
-            <div class="recentTimeline">
+        </div>
+        <div class="recentTimeline">
                 <div class="timeline">
                     <div class="timeline-item left">
                       <img src="https://via.placeholder.com/100" alt="Event Image">
                       <div class="content">
-                        <div class="date">2023</div>
+                        <div class="date">2023</div><!-------------------------------------date-->
                         <h3>Project Kickoff</h3>
                         <p>We initiated the project with a full team and defined our objectives.</p>
                       </div>
@@ -191,7 +278,7 @@ h1, h2 {
                     <div class="timeline-item right">
                       <img src="https://via.placeholder.com/100" alt="Event Image">
                       <div class="content">
-                        <div class="date">2024</div>
+                        <div class="date">2024</div><!-------------------------------------date-->
                         <h3>Development Phase</h3>
                         <p>Completed the development phase and started testing the product.</p>
                       </div>
@@ -200,17 +287,66 @@ h1, h2 {
                     <div class="timeline-item left">
                       <img src="https://via.placeholder.com/100" alt="Event Image">
                       <div class="content">
-                        <div class="date">2025</div>
+                        <div class="date">2025</div><!-------------------------------------date-->
+                        <h3>Launch</h3>
+                        <p>Successfully launched the product in the market with great reception.</p>
+                      </div>
+                    </div>
+                    <div class="timeline-item right">
+                      <img src="https://via.placeholder.com/100" alt="Event Image">
+                      <div class="content">
+                        <div class="date">2026</div><!-------------------------------------date-->
+                        <h3>Development Phase</h3>
+                        <p>Completed the development phase and started testing the product.</p>
+                      </div>
+                    </div>
+                  
+                    <div class="timeline-item leftLast">
+                      <img src="https://via.placeholder.com/100" alt="Event Image">
+                      <div class="content">
+                        <div class="date">2027</div><!-------------------------------------date-->
                         <h3>Launch</h3>
                         <p>Successfully launched the product in the market with great reception.</p>
                       </div>
                     </div>
                   </div>  
-            </div>
-            <div class="footer">
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <img src="assets/logo.png" alt="OrcaCat logo" style="width: 300px;">
+                </div>
 
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@orcacatblog.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+
+                <div class="footer-section social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><img src="assets/facebook-icon.png" alt="Facebook" style="width: 20px;"></a>
+                    <a href="#"><img src="assets/twitter-icon.png" alt="Twitter" style="width: 20px;"></a>
+                    <a href="#"><img src="assets/instagram-icon.png" alt="Instagram" style="width: 20px;"></a>
+                    <a href="#"><img src="assets/linkedin-icon.png" alt="LinkedIn" style="width: 20px;"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OrcaCat Blog | Designed by Micah Hou</p>
             </div>
         </div>
+      </div>
     </div>
     <script src="Taskbar.js"></script>
 </body>
