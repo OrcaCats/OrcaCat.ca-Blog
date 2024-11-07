@@ -7,8 +7,39 @@
     <link rel="icon" type="image/x-icon" href="assets/logo.ico">
     <link rel="stylesheet" href="taskBarStyles.css">
     <style>
-        .featured-container{
-            
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            overflow-x: hidden;
+            height: 2000px;
+        }
+
+        .content {
+            max-width: 100vw;
+            margin-top: 90px;
+            display: flex;
+        }
+
+        .featured-container {
+            width: 100vw; /* Ensure it spans the full viewport width */
+            margin: 0 auto;
+            height: auto;
+        }
+
+        .image-container {
+            width: 100vw;
+            height: 500px;
+            transition: opacity 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100vw; /* Matches viewport width */
+            height: 100%; /* Matches the container height */
+            object-fit: cover; /* Ensures the image fills the container */
         }
     </style>
 </head>
@@ -20,9 +51,14 @@
         <a href="projects.html" class="taskbarLink">PROJECTS</a>
         <a href="blog.html" class="taskbarLink">BLOG</a>
     </div>
-    <div class="featured-container">
-        
+    <div class="content">
+        <div class="featured-container">
+            <div class="image-container" onclick="rotateImage()">
+                <img id="rotatingImage" src="assets/landerDemo1.png" alt="Rotating Image">
+            </div>
+        </div>
     </div>
     <script src="Taskbar.js"></script>
-</body>s
+    <script src="rotatingFeatured.js"></script>
+</body>
 </html>

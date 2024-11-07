@@ -1,0 +1,57 @@
+/* Ensure the body fills the viewport */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Main content will take up available space between header and footer */
+.main-content {
+    flex-grow: 1;
+}
+
+/* Footer styling remains the same */
+.footer {
+    background-color: #333;
+    color: #f2f2f2;
+    padding: 0px;
+    width: 100%;
+    margin-top: auto; /* Allows footer to stay at the bottom */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #777;
+    font-size: 0.8em;
+    color: #ccc;
+}

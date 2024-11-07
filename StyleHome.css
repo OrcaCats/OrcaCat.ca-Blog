@@ -4,11 +4,7 @@
   width: 100%;
   /*margin-top: 100px; /* Space for the fixed taskbar */
 }
-.main-content {
-  /*margin-top: 70px; /*prevemnts overlap with nav
-  flex: 3;*/
-  height: 2000px;
-}
+
 .post {
   margin-bottom: 20px;
   padding: 15px;
@@ -19,33 +15,7 @@
 h1, h2 {
   color: #333;
 }
-.landingImage{
-  width: 100%;
-  max-width: 100%;
-  height: auto; /* Ensures the aspect ratio is maintained */
-  display: block; /* Removes any gaps below the image */
-  margin: 0 auto; /* Centers the image if needed */
-  padding: 0;
-  margin-top: 85px;
-}
-.Landing {
-  position: relative; /* Required to position the gradient */
-  width: 100%; /* Make sure the container is full width */
-  margin: 0 auto; /* Centers the image if needed */
-  padding: 0;
-  margin-top: 85px;
-}
-.Landing::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px; /* Adjust the height of the gradient */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5)); /* Adjust colors as needed */
-  z-index: 1; /* Layer it above the image */
-  pointer-events: none; /* Ensures that the gradient doesn't interfere with any interactivity */
-}
+
 .timeline {
   position: relative;
   max-width: 800px;
@@ -135,8 +105,4 @@ h1, h2 {
   .timeline-item img {
     display: none;
   }
-}
-
-.ProjectTimelineBuffer {
-  
 }
