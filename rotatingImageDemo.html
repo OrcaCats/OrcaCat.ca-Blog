@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Rotator</title>
+    <style>
+        /* Styling for the image container */
+        .image-container {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container" onclick="rotateImage()">
+        <img id="rotatingImage" src="assets/landerDemo1.png" alt="Rotating Image">
+    </div>
+
+    <script>
+        // List of image URLs
+        const images = ["assets/landerDemo1.png", "assets/landerDemo2.png"];
+        let currentIndex = 0;
+
+        function rotateImage() {
+            // Increment the index and wrap around if it exceeds the number of images
+            currentIndex = (currentIndex + 1) % images.length;
+            // Change the image source to the next image in the list
+            document.getElementById("rotatingImage").src = images[currentIndex];
+        }
+    </script>
+
+</body>
+</html>
