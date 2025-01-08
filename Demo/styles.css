@@ -1,0 +1,128 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* Main section styling */
+main {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* About section styling */
+section#about {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+section#about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section#about p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* About page image */
+section#about img {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+/* Event styling */
+section#events {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+section#events h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.event {
+    background-color: #e9ecef;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.event h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.event p {
+    margin-bottom: 5px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px;
+}
