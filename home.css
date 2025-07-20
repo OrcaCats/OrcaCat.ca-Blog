@@ -1,0 +1,190 @@
+body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            max-width: 100vw;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+
+        .site-container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        /* Landing section */
+        .landing {
+            position: relative;
+            width: 100%;
+            margin-top: 85px;
+            padding: 0;
+        }
+
+        .landing::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .landing-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Timeline section */
+        .timeline-buffer {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ededed;
+        }
+
+        .timeline-title {
+            font-size: 50px;
+            color: #333;
+            margin: 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* Timeline line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        /* Timeline items */
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            position: relative;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        /* Timeline item positioning */
+        .timeline-item.left {
+            left: 0;
+            flex-direction: row;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            flex-direction: row-reverse;
+        }
+
+        /* Timeline circles */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid #007bff;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left::after {
+            right: -16px;
+        }
+
+        .timeline-item.right::after {
+            left: -16px;
+        }
+
+        /* Timeline content */
+        .timeline-content {
+            color: #333;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .timeline-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .timeline-title {
+                font-size: 32px;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .timeline::after {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: calc(100% - 40px);
+                left: 0;
+                margin-left: 20px;
+                flex-direction: row;
+            }
+
+            .timeline-item::after {
+                left: -16px;
+            }
+
+            .timeline-item img {
+                display: none;
+            }
+
+            .timeline-content {
+                padding: 0 10px;
+            }
+
+            .landing {
+                margin-top: 70px;
+            }
+        }
