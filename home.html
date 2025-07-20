@@ -6,19 +6,11 @@
     <title>OrcaCat Blog</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.ico">
     <link rel="stylesheet" href="Home.css">
-    <link rel="stylesheet" href="taskBarStyles.css">
     <link rel="stylesheet" href="footerStyles.css">
 </head>
 <body>
     <div class="site-container">
-        <!-- Navigation -->
-        <div id="taskbar">
-            <a href="home.html" class="taskbarLink">HOME</a>
-            <a href="about.html" class="taskbarLink">ABOUT</a>
-            <img src="assets/logo.png" alt="logo" class="taskbarLogo">
-            <a href="projects.html" class="taskbarLink">PROJECTS</a>
-            <a href="blog.html" class="taskbarLink">BLOG</a>
-        </div>
+        <!-- Taskbar will be injected here by the component -->
 
         <!-- Main content -->
         <main>
@@ -121,7 +113,8 @@
         </footer>
     </div>
 
-    <script src="Taskbar.js"></script>
+    <!-- Load the self-contained taskbar component -->
+    <script src="TEST_TASKBAR.js"></script>
     <script src="rotatingFeatured.js"></script>
 </body>
 </html>
