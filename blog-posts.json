@@ -2,6 +2,9 @@
     {
         "thumbnail": "assets/logo.png",
         "title": "Exploring Orca Habitats",
+        "date": "2024-11-18",
+        "blog": "true",
+        "project": "false",
         "description": "Dive into the underwater world of orcas and their unique habitats."
     },
     {
