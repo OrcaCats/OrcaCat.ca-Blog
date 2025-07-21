@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrcaCat Blog - Projects</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <link rel="stylesheet" href="taskBarStyles.css">
+    <link rel="stylesheet" href="footerStyles.css">
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <div id="taskbar">
+        <a href="home.html" class="taskbarLink">HOME</a>
+        <a href="about.html" class="taskbarLink">ABOUT</a>
+        <img src="assets/logo.png" alt="logo" class="taskbarLogo">
+        <a href="projects.html" class="taskbarLink">PROJECTS</a>
+        <a href="blog.html" class="taskbarLink">BLOG</a>
+    </div>
+
+    <div class="site-container">
+        <div class="container">
+            <div class="main-content">
+                <div class="project-timeline-buffer">
+                    <h1 class="title1">Recent Projects</h1>
+                </div>
+
+                <div class="projects-grid-section">
+                    <div class="projects-grid">
+                        <div class="project-card" onclick="openProjectModal('project1')">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Project Kickoff">
+                            </div>
+                            <div class="project-content">
+                                <div class="project-date">2023</div>
+                                <h3>Project Kickoff</h3>
+                                <p>We initiated the project with a full team and defined our objectives.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Planning</span>
+                                    <span class="tag">Strategy</span>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="project-card" onclick="openProjectModal('project2')">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Development Phase">
+                            </div>
+                            <div class="project-content">
+                                <div class="project-date">2024</div>
+                                <h3>Development Phase</h3>
+                                <p>Completed the development phase and started testing the product.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Development</span>
+                                    <span class="tag">Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="project-card" onclick="openProjectModal('project3')">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Launch">
+                            </div>
+                            <div class="project-content">
+                                <div class="project-date">2025</div>
+                                <h3>Launch</h3>
+                                <p>Successfully launched the product in the market with great reception.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Launch</span>
+                                    <span class="tag">Marketing</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" onclick="openProjectModal('project4')">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Second Development Phase">
+                            </div>
+                            <div class="project-content">
+                                <div class="project-date">2026</div>
+                                <h3>Enhancement Phase</h3>
+                                <p>Added new features and improved user experience based on feedback.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Enhancement</span>
+                                    <span class="tag">UX</span>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="project-card" onclick="openProjectModal('project5')">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Expansion">
+                            </div>
+                            <div class="project-content">
+                                <div class="project-date">2027</div>
+                                <h3>Global Expansion</h3>
+                                <p>Expanded the product globally with localization and new partnerships.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Expansion</span>
+                                    <span class="tag">Global</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" onclick="openProjectModal('project6')">
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/300x200" alt="Innovation">
+                            </div>
+                            <div class="project-content">
+                                <div class="project-date">2028</div>
+                                <h3>Innovation Lab</h3>
+                                <p>Established innovation lab for future technology research and development.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Innovation</span>
+                                    <span class="tag">R&D</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+
+                <!-- Project Modal -->
+                <div id="projectModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeProjectModal()">&times;</span>
+                        <div id="modalContent">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <img src="assets/logo.png" alt="OrcaCat logo" style="width: 300px;">
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@orcacatblog.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                </div>
+
+                <div class="footer-section social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><img src="assets/facebook-icon.png" alt="Facebook" style="width: 20px;"></a>
+                    <a href="#"><img src="assets/twitter-icon.png" alt="Twitter" style="width: 20px;"></a>
+                    <a href="#"><img src="assets/instagram-icon.png" alt="Instagram" style="width: 20px;"></a>
+                    <a href="#"><img src="assets/linkedin-icon.png" alt="LinkedIn" style="width: 20px;"></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OrcaCat Blog | Designed by Micah Hou</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="Taskbar.js"></script>
+    <script src="rotatingFeatured.js"></script>
+    <script>
+        // Project data for modal content
+        const projectData = {
+            project1: {
+                title: "Project Kickoff",
+                date: "2023",
+                fullDescription: "We initiated this ambitious project with a full team of experts and carefully defined our objectives. This phase involved extensive market research, stakeholder meetings, and strategic planning sessions to ensure we were building the right solution for our target audience.",
+                technologies: ["Project Management", "Market Research", "Strategic Planning"],
+                teamSize: "8 members",
+                duration: "3 months",
+                image: "https://via.placeholder.com/500x300"
+            },
+            project2: {
+                title: "Development Phase",
+                date: "2024",
+                fullDescription: "During this intensive development phase, our engineering team worked tirelessly to bring our vision to life. We implemented cutting-edge technologies and followed agile methodologies to ensure rapid iteration and continuous improvement.",
+                technologies: ["React", "Node.js", "MongoDB", "Docker"],
+                teamSize: "12 members",
+                duration: "8 months",
+                image: "https://via.placeholder.com/500x300"
+            },
+            project3: {
+                title: "Launch",
+                date: "2025",
+                fullDescription: "The product launch exceeded all expectations with tremendous market reception. We executed a comprehensive go-to-market strategy that included digital marketing campaigns, partnerships, and community engagement initiatives.",
+                technologies: ["Marketing Automation", "Analytics", "SEO"],
+                teamSize: "15 members",
+                duration: "2 months",
+                image: "https://via.placeholder.com/500x300"
+            },
+            project4: {
+                title: "Enhancement Phase",
+                date: "2026",
+                fullDescription: "Based on user feedback and market demands, we enhanced the product with new features and improved user experience. This phase focused on scalability, performance optimization, and accessibility improvements.",
+                technologies: ["React Native", "AI/ML", "Cloud Infrastructure"],
+                teamSize: "10 members",
+                duration: "6 months",
+                image: "https://via.placeholder.com/500x300"
+            },
+            project5: {
+                title: "Global Expansion",
+                date: "2027",
+                fullDescription: "We successfully expanded our product globally, implementing localization for multiple markets and establishing strategic partnerships worldwide. This expansion required careful cultural adaptation and regulatory compliance.",
+                technologies: ["Internationalization", "Microservices", "CDN"],
+                teamSize: "20 members",
+                duration: "12 months",
+                image: "https://via.placeholder.com/500x300"
+            },
+            project6: {
+                title: "Innovation Lab",
+                date: "2028",
+                fullDescription: "Established a dedicated innovation lab focused on future technology research and development. This initiative explores emerging technologies and their potential applications for next-generation products.",
+                technologies: ["AI", "Blockchain", "IoT", "AR/VR"],
+                teamSize: "6 members",
+                duration: "Ongoing",
+                image: "https://via.placeholder.com/500x300"
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const project = projectData[projectId];
+            const modal = document.getElementById('projectModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modalContent.innerHTML = `
+                <img src="${project.image}" alt="${project.title}" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+                <h2>${project.title}</h2>
+                <div class="modal-date">${project.date}</div>
+                <p>${project.fullDescription}</p>
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <strong>Technologies:</strong>
+                        <div class="tech-tags">
+                            ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Team Size:</strong> ${project.teamSize}
+                    </div>
+                    <div class="detail-item">
+                        <strong>Duration:</strong> ${project.duration}
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                closeProjectModal();
+            }
+        }
+    </script>
+</body>
+</html>

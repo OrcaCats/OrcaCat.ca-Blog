@@ -5,79 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OrcaCat Blog - Projects</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.ico">
-    <link rel="stylesheet" href="taskBarStyles.css">
-    <link rel="stylesheet" href="footerStyles.css">
     <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="footerStyles.css">
 </head>
 <body>
-    <div id="taskbar">
-        <a href="home.html" class="taskbarLink">HOME</a>
-        <a href="about.html" class="taskbarLink">ABOUT</a>
-        <img src="assets/logo.png" alt="logo" class="taskbarLogo">
-        <a href="projects.html" class="taskbarLink">PROJECTS</a>
-        <a href="blog.html" class="taskbarLink">BLOG</a>
-    </div>
-
     <div class="site-container">
-        <div class="container">
+        <!-- Taskbar will be injected here by the component -->
+
+        <!-- Main content -->
+        <main>
             <div class="main-content">
                 <div class="project-timeline-buffer">
                     <h1 class="title1">Recent Projects</h1>
                 </div>
 
-                <div class="recent-timeline">
-                    <div class="timeline">
-                        <div class="timeline-item left">
-                            <img src="https://via.placeholder.com/100" alt="Project Kickoff">
-                            <div class="content">
-                                <div class="date">2023</div>
-                                <h3>Project Kickoff</h3>
-                                <p>We initiated the project with a full team and defined our objectives.</p>
-                            </div>
-                        </div>
-                      
-                        <div class="timeline-item right">
-                            <img src="https://via.placeholder.com/100" alt="Development Phase">
-                            <div class="content">
-                                <div class="date">2024</div>
-                                <h3>Development Phase</h3>
-                                <p>Completed the development phase and started testing the product.</p>
-                            </div>
-                        </div>
-                      
-                        <div class="timeline-item left">
-                            <img src="https://via.placeholder.com/100" alt="Launch">
-                            <div class="content">
-                                <div class="date">2025</div>
-                                <h3>Launch</h3>
-                                <p>Successfully launched the product in the market with great reception.</p>
-                            </div>
-                        </div>
+                <!-- Project Controls -->
+                <div class="project-controls">
+                    <div class="project-count" id="projectCount">Loading projects...</div>
+                    <div class="sort-control">
+                        <label for="sortSelect">Sort by: </label>
+                        <select id="sortSelect">
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="title-asc">Title A-Z</option>
+                            <option value="title-desc">Title Z-A</option>
+                        </select>
+                    </div>
+                </div>
 
-                        <div class="timeline-item right">
-                            <img src="https://via.placeholder.com/100" alt="Second Development Phase">
-                            <div class="content">
-                                <div class="date">2026</div>
-                                <h3>Development Phase</h3>
-                                <p>Completed the development phase and started testing the product.</p>
-                            </div>
+                <!-- Project Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="featured">Featured</button>
+                    <button class="filter-btn" data-filter="development">Development</button>
+                    <button class="filter-btn" data-filter="planning">Planning</button>
+                    <button class="filter-btn" data-filter="launch">Launch</button>
+                </div>
+
+                <div class="projects-grid-section">
+                    <div class="projects-grid">
+                        <!-- Loading state -->
+                        <div class="loading-state">
+                            <div class="loading-spinner"></div>
+                            <p>Loading projects...</p>
                         </div>
-                      
-                        <div class="timeline-item left-last">
-                            <img src="https://via.placeholder.com/100" alt="Second Launch">
-                            <div class="content">
-                                <div class="date">2027</div>
-                                <h3>Launch</h3>
-                                <p>Successfully launched the product in the market with great reception.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <!-- Project Modal -->
+                <div id="projectModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeProjectModal()">&times;</span>
+                        <div id="modalContent">
+                            <!-- Dynamic content will be inserted here -->
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
 
         <!-- Footer -->
-        <div class="footer">
+        <footer class="footer">
             <div class="footer-content">
                 <div class="footer-section about">
                     <img src="assets/logo.png" alt="OrcaCat logo" style="width: 300px;">
@@ -95,25 +83,46 @@
 
                 <div class="footer-section contact">
                     <h3>Contact Us</h3>
-                    <p>Email: contact@orcacatblog.com</p>
+                    <p>Email: kelper22c@gmail.com</p>
                     <p>Phone: +1 234 567 890</p>
                 </div>
 
                 <div class="footer-section social">
                     <h3>Follow Us</h3>
-                    <a href="#"><img src="assets/facebook-icon.png" alt="Facebook" style="width: 20px;"></a>
-                    <a href="#"><img src="assets/twitter-icon.png" alt="Twitter" style="width: 20px;"></a>
-                    <a href="#"><img src="assets/instagram-icon.png" alt="Instagram" style="width: 20px;"></a>
-                    <a href="#"><img src="assets/linkedin-icon.png" alt="LinkedIn" style="width: 20px;"></a>
+                    <a href="#" aria-label="Facebook"><img src="assets/facebook-icon.png" alt="Facebook" style="width: 20px;"></a>
+                    <a href="#" aria-label="Twitter"><img src="assets/twitter-icon.png" alt="Twitter" style="width: 20px;"></a>
+                    <a href="#" aria-label="Instagram"><img src="assets/instagram-icon.png" alt="Instagram" style="width: 20px;"></a>
+                    <a href="#" aria-label="LinkedIn"><img src="assets/linkedin-icon.png" alt="LinkedIn" style="width: 20px;"></a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 OrcaCat Blog | Designed by Micah Hou</p>
             </div>
-        </div>
+        </footer>
     </div>
 
+    <!-- Load the self-contained taskbar component -->
     <script src="Taskbar.js"></script>
     <script src="rotatingFeatured.js"></script>
+    
+    <!-- Load the Projects CMS -->
+    <script src="projectCMS.js"></script>
+
+    <!-- Admin panel toggle (optional) -->
+    <script>
+        // Optional: Add keyboard shortcut to show admin functions
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+                console.log('Projects CMS Admin Mode');
+                console.log('Available commands:');
+                console.log('- projectsCMS.getAllProjects()');
+                console.log('- projectsCMS.addProject(projectData)');
+                console.log('- projectsCMS.removeProject(projectId)');
+                console.log('- projectsCMS.updateProject(projectId, updates)');
+                console.log('- projectsCMS.exportData()');
+                console.log('- projectsCMS.refresh()');
+            }
+        });
+    </script>
 </body>
 </html>

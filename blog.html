@@ -1,106 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrcaCat Blog</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
-    <link rel="stylesheet" href="taskBarStyles.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body, html {
-            overflow-x: hidden;
-            height: 2000px;
-        }
-
-        .content {
-            max-width: 100vw;
-            margin-top: 90px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .featured-container {
-            width: 100vw;
-            margin: 0 auto;
-            height: auto;
-        }
-
-        .image-container {
-            width: 100vw;
-            height: 500px;
-            transition: opacity 0.3s ease-in-out;
-            overflow: hidden;
-        }
-
-        .image-container img {
-            width: 100vw;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            width: 100%;
-            margin: 0px auto;
-            padding: 20px;
-        }
-
-        .blog-grid-item {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 15px;
-            color: #333;
-        }
-
-.blog-thumbnail {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.blog-title {
-    font-size: 1.2em;
-    margin: 10px 0 5px;
-}
-
-.blog-description {
-    font-size: 1em;
-    color: #666;
-}
-
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrcaCat Blog</title>
+  <link rel="icon" href="assets/logo.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="blog.css" />
 </head>
 <body>
-    <div id="taskbar">
-        <a href="home.html" class="taskbarLink">HOME</a>
-        <a href="about.html" class="taskbarLink">ABOUT</a>
-        <img src="assets/logo.png" alt="logo" class="taskbarLogo">
-        <a href="projects.html" class="taskbarLink">PROJECTS</a>
-        <a href="blog.html" class="taskbarLink">BLOG</a>
+  <!-- Taskbar will be inserted here by Taskbar.js -->
+
+  <div class="content">
+    <div class="featured-container">
+      <div class="image-container" onclick="rotateImage()">
+        <img id="rotatingImage" src="assets/landerDemo1.png" alt="Rotating Image" />
+      </div>
     </div>
-    <div class="content">
-        <div class="featured-container">
-            <div class="image-container" onclick="rotateImage()">
-                <img id="rotatingImage" src="assets/landerDemo1.png" alt="Rotating Image">
-            </div>
-        </div>
-        <div class="blog-grid" id="blogGrid"></div>
-    </div>
-    <script src="Taskbar.js"></script>
-    <script src="blogCMS.js"></script>
-    <script src="rotatingFeatured.js"></script>
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+
+  <!-- Load scripts AFTER DOM to ensure Taskbar.js runs properly -->
+  <script src="Taskbar.js"></script>
+  <script>
+    // Manually initialize Taskbar (if not already done inside Taskbar.js)
+    document.addEventListener('DOMContentLoaded', function () {
+      window.taskbar = new TaskbarComponent({
+        logoSrc: 'assets/logo.png',
+        logoAlt: 'logo',
+        links: [
+          { href: 'home.html', text: 'HOME' },
+          { href: 'about.html', text: 'ABOUT' },
+          { href: 'projects.html', text: 'PROJECTS' },
+          { href: 'blog.html', text: 'BLOG' }
+        ]
+      });
+    });
+  </script>
+  <script src="blogCMS.js"></script>
+  <script src="rotatingFeatured.js"></script>
 </body>
 </html>
