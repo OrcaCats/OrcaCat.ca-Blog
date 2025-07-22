@@ -1,218 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrcaCat Blog - About</title>
-    <link rel="icon" type="image/x-icon" href="assets/logo.ico">
+    <title>About - Your Portfolio</title>
     <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="footerStyles.css">
 </head>
 <body>
     <div class="site-container">
-        <!-- Taskbar will be injected here by the component -->
+        <!-- About Header Section -->
+        <div class="about-header">
+            <div class="about-hero">
+                <h1 class="title1">About Me</h1>
+                <p class="hero-subtitle">Passionate Developer & Creative Problem Solver</p>
+            </div>
+        </div>
 
-        <!-- Main content -->
-        <main>
-            <div class="main-content">
-                <div class="about-header-buffer">
-                    <h1 class="title1">About OrcaCat</h1>
+        <!-- Main About Content -->
+        <div class="about-content">
+            <!-- Profile Section -->
+            <section class="profile-section">
+                <div class="profile-container">
+                    <div class="profile-image-wrapper">
+                        <img src="assets/profile-image.jpg" alt="Profile Picture" class="profile-image">
+                        <div class="profile-status">
+                            <span class="status-indicator"></span>
+                            Available for work
+                        </div>
+                    </div>
+                    <div class="profile-content">
+                        <h2>Hi, I'm [Your Name]</h2>
+                        <p class="profile-intro">
+                            I'm a passionate full-stack developer with a love for creating innovative solutions and beautiful user experiences. With [X] years of experience in web development, I specialize in modern JavaScript frameworks, responsive design, and building scalable applications.
+                        </p>
+                        <p class="profile-description">
+                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in the power of clean code, thoughtful design, and continuous learning.
+                        </p>
+                    </div>
                 </div>
+            </section>
 
-                <!-- About Hero Section -->
-                <section class="about-hero">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h2>Welcome to Our Journey</h2>
-                            <p>OrcaCat Blog is where innovation meets creativity. We're passionate about sharing our projects, insights, and experiences in the world of technology and development.</p>
+            <!-- Skills Section -->
+            <section class="skills-section">
+                <div class="section-container">
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Frontend Development</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Vue.js</span>
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">Sass</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
                         </div>
-                        <div class="hero-image">
-                            <img src="assets/logo.png" alt="OrcaCat Logo" class="about-logo">
+                        <div class="skill-category">
+                            <h3>Backend Development</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Express.js</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">REST APIs</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Technologies</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Webpack</span>
+                                <span class="skill-tag">Jest</span>
+                                <span class="skill-tag">CI/CD</span>
+                            </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Mission Section -->
-                <section class="mission-section">
-                    <div class="section-content">
-                        <h2>Our Mission</h2>
-                        <p>We believe in the power of technology to transform ideas into reality. Our mission is to document our journey, share our learnings, and inspire others to create amazing projects. Whether it's web development, software engineering, or innovative solutions, we're here to explore and share.</p>
-                    </div>
-                </section>
-
-                <!-- Team Section -->
-                <section class="team-section">
-                    <h2>Meet the Team</h2>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <div class="member-avatar">
-                                <img src="assets/team-member-placeholder.png" alt="Team Member" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <div class="avatar-placeholder" style="display: none;">
-                                    <span>MH</span>
+            <!-- Experience Timeline -->
+            <section class="timeline-section">
+                <div class="section-container">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2023 - Present</div>
+                                <h3>Senior Full-Stack Developer</h3>
+                                <h4>Tech Company Inc.</h4>
+                                <p>Leading development of scalable web applications, mentoring junior developers, and implementing best practices for code quality and performance optimization.</p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-tag">React</span>
+                                    <span class="timeline-tag">Node.js</span>
+                                    <span class="timeline-tag">AWS</span>
                                 </div>
                             </div>
-                            <h3>Micah Hou</h3>
-                            <p class="member-role">Lead Developer & Designer</p>
-                            <p class="member-description">Passionate about creating innovative web solutions and bringing ideas to life through code and design.</p>
                         </div>
-                        
-                        <!-- Add more team members as needed -->
-                        <div class="team-member">
-                            <div class="member-avatar">
-                                <div class="avatar-placeholder">
-                                    <span>OC</span>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2021 - 2023</div>
+                                <h3>Frontend Developer</h3>
+                                <h4>Digital Agency XYZ</h4>
+                                <p>Developed responsive web applications for various clients, focusing on user experience and modern design principles.</p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-tag">Vue.js</span>
+                                    <span class="timeline-tag">CSS3</span>
+                                    <span class="timeline-tag">JavaScript</span>
                                 </div>
                             </div>
-                            <h3>OrcaCat Team</h3>
-                            <p class="member-role">Development & Innovation</p>
-                            <p class="member-description">A collaborative team dedicated to pushing the boundaries of what's possible in web development and beyond.</p>
                         </div>
-                    </div>
-                </section>
-
-                <!-- Values Section -->
-                <section class="values-section">
-                    <h2>Our Values</h2>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <div class="value-icon">🚀</div>
-                            <h3>Innovation</h3>
-                            <p>We constantly seek new ways to solve problems and create better user experiences through cutting-edge technology.</p>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-icon">🤝</div>
-                            <h3>Collaboration</h3>
-                            <p>Great projects are built by great teams. We believe in the power of collaboration and shared knowledge.</p>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-icon">💡</div>
-                            <h3>Learning</h3>
-                            <p>Every project is an opportunity to learn something new. We embrace challenges as chances to grow and improve.</p>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-icon">⭐</div>
-                            <h3>Quality</h3>
-                            <p>We're committed to delivering high-quality work that not only meets requirements but exceeds expectations.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Skills Section -->
-                <section class="skills-section">
-                    <h2>What We Do</h2>
-                    <div class="skills-container">
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h3>Web Development</h3>
-                                <ul>
-                                    <li>HTML5 & CSS3</li>
-                                    <li>JavaScript & TypeScript</li>
-                                    <li>React & Vue.js</li>
-                                    <li>Node.js & Express</li>
-                                    <li>Responsive Design</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <h3>Design & UX</h3>
-                                <ul>
-                                    <li>UI/UX Design</li>
-                                    <li>Prototyping</li>
-                                    <li>Branding & Identity</li>
-                                    <li>User Research</li>
-                                    <li>Accessibility</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <h3>Development Tools</h3>
-                                <ul>
-                                    <li>Git & Version Control</li>
-                                    <li>Database Management</li>
-                                    <li>API Development</li>
-                                    <li>Testing & Debugging</li>
-                                    <li>Performance Optimization</li>
-                                </ul>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2019 - 2021</div>
+                                <h3>Junior Developer</h3>
+                                <h4>Startup Solutions</h4>
+                                <p>Started my professional journey building web applications, learning best practices, and contributing to various projects.</p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-tag">HTML</span>
+                                    <span class="timeline-tag">CSS</span>
+                                    <span class="timeline-tag">PHP</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Contact Section -->
-                <section class="contact-section">
-                    <h2>Get In Touch</h2>
-                    <div class="contact-content">
-                        <p>Have a project in mind? Want to collaborate? We'd love to hear from you!</p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <strong>Email:</strong>
-                                <a href="mailto:kelper22c@gmail.com">kelper22c@gmail.com</a>
-                            </div>
-                            <div class="contact-item">
-                                <strong>Phone:</strong>
-                                <a href="tel:+1234567890">+1 234 567 890</a>
-                            </div>
+            <!-- Interests & Hobbies -->
+            <section class="interests-section">
+                <div class="section-container">
+                    <h2 class="section-title">When I'm Not Coding</h2>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <div class="interest-icon">🎵</div>
+                            <h3>Music Production</h3>
+                            <p>Creating electronic music and exploring sound design in my spare time.</p>
                         </div>
-                        <div class="social-links">
-                            <a href="#" aria-label="Follow us on Facebook">
-                                <img src="assets/facebook-icon.png" alt="Facebook" style="width: 24px;">
-                            </a>
-                            <a href="#" aria-label="Follow us on Twitter">
-                                <img src="assets/twitter-icon.png" alt="Twitter" style="width: 24px;">
-                            </a>
-                            <a href="#" aria-label="Follow us on Instagram">
-                                <img src="assets/instagram-icon.png" alt="Instagram" style="width: 24px;">
-                            </a>
-                            <a href="#" aria-label="Connect on LinkedIn">
-                                <img src="assets/linkedin-icon.png" alt="LinkedIn" style="width: 24px;">
-                            </a>
+                        <div class="interest-card">
+                            <div class="interest-icon">📚</div>
+                            <h3>Reading</h3>
+                            <p>Always learning through tech blogs, books, and staying updated with industry trends.</p>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🌱</div>
+                            <h3>Gardening</h3>
+                            <p>Growing plants and finding peace in nature's systematic beauty.</p>
+                        </div>
+                        <div class="interest-card">
+                            <div class="interest-icon">🎮</div>
+                            <h3>Gaming</h3>
+                            <p>Enjoying indie games and analyzing game mechanics and user experiences.</p>
                         </div>
                     </div>
-                </section>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <img src="assets/logo.png" alt="OrcaCat logo" style="width: 300px;">
                 </div>
+            </section>
 
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
+            <!-- Contact CTA -->
+            <section class="contact-cta">
+                <div class="section-container">
+                    <div class="cta-content">
+                        <h2>Let's Work Together</h2>
+                        <p>Interested in collaborating or have a project in mind? I'd love to hear from you!</p>
+                        <div class="cta-buttons">
+                            <a href="mailto:kelper22c@gmail.com" class="cta-button primary">Get In Touch</a>
+                            <a href="projects.html" class="cta-button secondary">View My Work</a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="footer-section contact">
-                    <h3>Contact Us</h3>
-                    <p>Email: kelper22c@gmail.com</p>
-                    <p>Phone: +1 234 567 890</p>
-                </div>
-
-                <div class="footer-section social">
-                    <h3>Follow Us</h3>
-                    <a href="#" aria-label="Facebook"><img src="assets/facebook-icon.png" alt="Facebook" style="width: 20px;"></a>
-                    <a href="#" aria-label="Twitter"><img src="assets/twitter-icon.png" alt="Twitter" style="width: 20px;"></a>
-                    <a href="#" aria-label="Instagram"><img src="assets/instagram-icon.png" alt="Instagram" style="width: 20px;"></a>
-                    <a href="#" aria-label="LinkedIn"><img src="assets/linkedin-icon.png" alt="LinkedIn" style="width: 20px;"></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 OrcaCat Blog | Designed by Micah Hou</p>
-            </div>
-        </footer>
+            </section>
+        </div>
     </div>
 
-    <!-- Load the self-contained taskbar component -->
-    <script src="Taskbar.js"></script>
+    <!-- Include Taskbar Component -->
+    <script src="taskbar.js"></script>
 </body>
 </html>

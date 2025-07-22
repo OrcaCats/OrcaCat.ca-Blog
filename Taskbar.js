@@ -161,7 +161,7 @@ class TaskbarComponent {
     height: 46px;
     z-index: 3;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
@@ -185,7 +185,7 @@ class TaskbarComponent {
     height: 16px; /* Reduced from 22px */
     z-index: 2;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
