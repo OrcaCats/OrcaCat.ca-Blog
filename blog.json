@@ -1,0 +1,54 @@
+{
+  "lastUpdated": "2024-01-22T10:00:00.000Z",
+  "totalPosts": 3,
+  "meta": {
+    "version": "1.0",
+    "description": "Simple blog posts for portfolio website",
+    "categories": ["tutorial", "tech", "personal"],
+    "author": "Your Name"
+  },
+  "posts": [
+    {
+      "id": 1,
+      "title": "My First Blog Post",
+      "slug": "my-first-blog-post",
+      "excerpt": "Welcome to my blog! This is where I'll share my thoughts on web development, programming tips, and my journey as a developer.",
+      "content": "Welcome to my blog! I'm excited to start sharing my experiences and knowledge with you.\n\n## Why I Started This Blog\n\nI decided to create this blog for several reasons:\n\n- **Share knowledge** - Help other developers learn from my experiences\n- **Document my journey** - Keep track of what I learn along the way\n- **Connect with the community** - Meet other developers and exchange ideas\n- **Improve my writing** - Practice explaining complex concepts clearly\n\n## What You Can Expect\n\nI'll be writing about:\n\n- Web development tutorials\n- Programming tips and tricks\n- Project showcases\n- Tech industry insights\n- Personal development stories\n\n## Let's Connect\n\nI'd love to hear from you! Feel free to reach out on social media or leave comments on my posts. Let's build something amazing together!\n\nThanks for reading, and welcome to my corner of the internet!",
+      "category": "personal",
+      "tags": ["welcome", "introduction", "blogging"],
+      "date": "2024-01-20",
+      "readingTime": 2,
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
+      "featured": true,
+      "author": "Your Name"
+    },
+    {
+      "id": 2,
+      "title": "5 Essential JavaScript Tips for Beginners",
+      "slug": "5-essential-javascript-tips-beginners",
+      "excerpt": "Learn these fundamental JavaScript concepts that will make you a better developer. Perfect for beginners who want to level up their coding skills.",
+      "content": "JavaScript can be tricky when you're starting out. Here are 5 essential tips that will help you write better JavaScript code.\n\n## 1. Use 'const' and 'let' Instead of 'var'\n\nAvoid using `var` and use `const` and `let` instead:\n\n```javascript\n// Bad\nvar name = 'John';\nvar age = 25;\n\n// Good\nconst name = 'John';  // Won't change\nlet age = 25;         // Might change\n```\n\n## 2. Always Use Strict Equality (===)\n\nUse `===` instead of `==` to avoid unexpected type conversions:\n\n```javascript\n// Bad\nif (age == '25') {  // true even if age is string\n\n// Good  \nif (age === 25) {   // only true if age is number 25\n```\n\n## 3. Use Template Literals for Strings\n\nTemplate literals make string concatenation much easier:\n\n```javascript\n// Bad\nconst message = 'Hello ' + name + ', you are ' + age + ' years old';\n\n// Good\nconst message = `Hello ${name}, you are ${age} years old`;\n```\n\n## 4. Use Arrow Functions\n\nArrow functions provide cleaner syntax:\n\n```javascript\n// Traditional function\nfunction double(x) {\n  return x * 2;\n}\n\n// Arrow function\nconst double = (x) => x * 2;\n```\n\n## 5. Use Array Methods\n\nLearn array methods like `map`, `filter`, and `reduce`:\n\n```javascript\nconst numbers = [1, 2, 3, 4, 5];\n\n// Double all numbers\nconst doubled = numbers.map(n => n * 2);\n\n// Get even numbers only  \nconst evens = numbers.filter(n => n % 2 === 0);\n```\n\n## Conclusion\n\nThese tips will help you write cleaner, more modern JavaScript. Practice using them in your projects and you'll become a better developer!\n\nHappy coding! 🚀",
+      "category": "tutorial",
+      "tags": ["javascript", "beginner", "tips", "coding"],
+      "date": "2024-01-18",
+      "readingTime": 3,
+      "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=600&h=400&fit=crop",
+      "featured": false,
+      "author": "Your Name"
+    },
+    {
+      "id": 3,
+      "title": "Building Responsive Websites with CSS Grid",
+      "slug": "building-responsive-websites-css-grid",
+      "excerpt": "CSS Grid makes creating responsive layouts easier than ever. Learn the basics and see how to create a modern website layout that works on all devices.",
+      "content": "CSS Grid is a powerful tool for creating responsive layouts. Let me show you how to build a modern website layout that adapts to any screen size.\n\n## What is CSS Grid?\n\nCSS Grid is a layout system that lets you create complex, responsive designs with just a few lines of code.\n\n## Basic Grid Setup\n\nHere's how to create a simple grid:\n\n```css\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}\n```\n\nThis creates a 3-column layout with equal-width columns and 20px spacing.\n\n## Responsive Grid Example\n\nHere's a complete responsive layout:\n\n```css\n.page-layout {\n  display: grid;\n  grid-template-areas:\n    \"header header header\"\n    \"sidebar main main\"\n    \"footer footer footer\";\n  grid-template-rows: auto 1fr auto;\n  min-height: 100vh;\n  gap: 20px;\n}\n\n.header { grid-area: header; }\n.sidebar { grid-area: sidebar; }\n.main { grid-area: main; }\n.footer { grid-area: footer; }\n\n/* Mobile layout */\n@media (max-width: 768px) {\n  .page-layout {\n    grid-template-areas:\n      \"header\"\n      \"main\"\n      \"sidebar\"\n      \"footer\";\n    grid-template-columns: 1fr;\n  }\n}\n```\n\n## Card Grid Layout\n\nPerfect for displaying blog posts or products:\n\n```css\n.card-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  gap: 30px;\n  padding: 20px;\n}\n\n.card {\n  background: white;\n  border-radius: 8px;\n  padding: 20px;\n  box-shadow: 0 2px 10px rgba(0,0,0,0.1);\n}\n```\n\n## Grid vs Flexbox\n\n**Use Grid when:**\n- You need 2D layouts (rows AND columns)\n- Creating page layouts\n- You want precise control over positioning\n\n**Use Flexbox when:**\n- You need 1D layouts (just rows OR columns)  \n- Aligning items within a container\n- Creating navigation bars\n\n## Browser Support\n\nCSS Grid is supported in all modern browsers. For older browsers, you can provide flexbox fallbacks:\n\n```css\n.container {\n  /* Flexbox fallback */\n  display: flex;\n  flex-wrap: wrap;\n  \n  /* Grid enhancement */\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n}\n```\n\n## Conclusion\n\nCSS Grid makes responsive design much easier. Start using it in your projects and you'll wonder how you ever lived without it!\n\nTry building a simple grid layout and see how powerful it can be. Your future self will thank you! 💪",
+      "category": "tech",
+      "tags": ["css", "grid", "responsive", "layout", "web-design"],
+      "date": "2024-01-15",
+      "readingTime": 4,
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+      "featured": false,
+      "author": "Your Name"
+    }
+  ]
+}
