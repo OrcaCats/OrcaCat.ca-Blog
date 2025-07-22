@@ -77,7 +77,7 @@ class TaskbarComponent {
     align-items: center;
     justify-content: center;
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
-    z-index: 1001;
+    z-index: 99999; /* Change this to a higher value like 9999 */
     pointer-events: none;
 }
 .taskbar-social-ring .social-icon {
@@ -123,7 +123,7 @@ class TaskbarComponent {
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    z-index: 1;
+    z-index: 999999999;
 }
 
 .social-icon img {
