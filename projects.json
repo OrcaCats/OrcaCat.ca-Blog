@@ -2,86 +2,61 @@
   "projects": [
     {
       "id": "project1",
-      "title": "Project Kickoff",
-      "date": "2023",
+      "title": "UnderTable KeyboardHolder",
+      "date": "2024",
       "shortDescription": "We initiated the project with a full team and defined our objectives.",
-      "fullDescription": "We initiated this ambitious project with a full team of experts and carefully defined our objectives. This phase involved extensive market research, stakeholder meetings, and strategic planning sessions to ensure we were building the right solution for our target audience.",
-      "image": "https://via.placeholder.com/300x200",
-      "modalImage": "https://via.placeholder.com/500x300",
-      "tags": ["Planning", "Strategy"],
-      "technologies": ["Project Management", "Market Research", "Strategic Planning"],
-      "teamSize": "8 members",
-      "duration": "3 months",
+      "fullDescription": "We initiated this ambitious project with a full team of experts and carefully defined our objectives. This phase involved extensive market research, stakeholder meetings, and strategic planning sessions to ensure we were building the right solution for our target audience.TEST",
+      "main-image": "https://via.placeholder.com/300x200",
+      "images": [
+        "assets\\landerDemo1.png",
+        "assets\\landerDemo2.png",
+        "assets\\logo.png"
+      ],
+      "tags": [
+        "3D Modeling",
+        "3D Printing"
+      ],
+      "technologies": [
+        "Project Management",
+        "Market Research",
+        "Strategic Planning"
+      ],
       "featured": false
     },
     {
       "id": "project2",
-      "title": "Development Phase",
-      "date": "2024",
-      "shortDescription": "Completed the development phase and started testing the product.",
-      "fullDescription": "During this intensive development phase, our engineering team worked tirelessly to bring our vision to life. We implemented cutting-edge technologies and followed agile methodologies to ensure rapid iteration and continuous improvement.",
-      "image": "https://via.placeholder.com/300x200",
-      "modalImage": "https://via.placeholder.com/500x300",
-      "tags": ["Development", "Testing"],
-      "technologies": ["React", "Node.js", "MongoDB", "Docker"],
-      "teamSize": "12 members",
-      "duration": "8 months",
-      "featured": true
-    },
-    {
-      "id": "project3",
-      "title": "Launch",
+      "title": "Project Kickoff",
       "date": "2025",
-      "shortDescription": "Successfully launched the product in the market with great reception.",
-      "fullDescription": "The product launch exceeded all expectations with tremendous market reception. We executed a comprehensive go-to-market strategy that included digital marketing campaigns, partnerships, and community engagement initiatives.",
-      "image": "https://via.placeholder.com/300x200",
-      "modalImage": "https://via.placeholder.com/500x300",
-      "tags": ["Launch", "Marketing"],
-      "technologies": ["Marketing Automation", "Analytics", "SEO"],
-      "teamSize": "15 members",
-      "duration": "2 months",
-      "featured": true
-    },
-    {
-      "id": "project4",
-      "title": "Enhancement Phase",
-      "date": "2026",
-      "shortDescription": "Added new features and improved user experience based on feedback.",
-      "fullDescription": "Based on user feedback and market demands, we enhanced the product with new features and improved user experience. This phase focused on scalability, performance optimization, and accessibility improvements.",
-      "image": "https://via.placeholder.com/300x200",
-      "modalImage": "https://via.placeholder.com/500x300",
-      "tags": ["Enhancement", "UX"],
-      "technologies": ["React Native", "AI/ML", "Cloud Infrastructure"],
-      "teamSize": "10 members",
-      "duration": "6 months",
+      "shortDescription": "We initiated the project with a full team and defined our objectives.",
+      "fullDescription": "We initiated this ambitious project with a full team of experts and carefully defined our objectives. This phase involved extensive market research, stakeholder meetings, and strategic planning sessions to ensure we were building the right solution for our target audience.",
+      "main-image": "https://via.placeholder.com/300x200",
+      "images": [],
+      "tags": [
+        "Planning",
+        "Strategy"
+      ],
+      "technologies": [
+        "Project Management",
+        "Market Research",
+        "Strategic Planning"
+      ],
       "featured": false
     },
     {
-      "id": "project5",
-      "title": "Global Expansion",
-      "date": "2027",
-      "shortDescription": "Expanded the product globally with localization and new partnerships.",
-      "fullDescription": "We successfully expanded our product globally, implementing localization for multiple markets and establishing strategic partnerships worldwide. This expansion required careful cultural adaptation and regulatory compliance.",
-      "image": "https://via.placeholder.com/300x200",
-      "modalImage": "https://via.placeholder.com/500x300",
-      "tags": ["Expansion", "Global"],
-      "technologies": ["Internationalization", "Microservices", "CDN"],
-      "teamSize": "20 members",
-      "duration": "12 months",
-      "featured": false
-    },
-    {
-      "id": "project6",
-      "title": "Innovation Lab",
-      "date": "2028",
-      "shortDescription": "Established innovation lab for future technology research and development.",
-      "fullDescription": "Established a dedicated innovation lab focused on future technology research and development. This initiative explores emerging technologies and their potential applications for next-generation products.",
-      "image": "https://via.placeholder.com/300x200",
-      "modalImage": "https://via.placeholder.com/500x300",
-      "tags": ["Innovation", "R&D"],
-      "technologies": ["AI", "Blockchain", "IoT", "AR/VR"],
-      "teamSize": "6 members",
-      "duration": "Ongoing",
+      "title": "Personal Website",
+      "date": "2025",
+      "shortDescription": "Build my personal website -- Orcacat.ca",
+      "fullDescription": "",
+      "tags": [
+        "Technology"
+      ],
+      "technologies": [
+        "HTML/CSS",
+        "JS",
+        "AWS"
+      ],
+      "main-image": "",
+      "images": [],
       "featured": true
     }
   ]
