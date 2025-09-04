@@ -6,10 +6,10 @@
 function createFooter(options = {}) {
     // Default configuration
     const config = {
-        logoLetter: 'L',
-        brandName: 'Your Brand',
-        email: 'hello@yoursite.com',
-        phone: '+1 (555) 123-4567',
+        logoImage: 'https://via.placeholder.com/70x70/7c3aed/ffffff?text=L', // Default placeholder image
+        logoAlt: 'OrcaCat Logo',
+        brandName: 'Orcacat Blog',
+        email: 'micah.hou@outlook.com',
         address: '123 Web Street, Digital City',
         hours: 'Mon-Fri: 9AM-6PM',
         socialLinks: {
@@ -74,12 +74,10 @@ function createFooter(options = {}) {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 2rem;
-                font-weight: bold;
-                color: white;
                 box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
                 position: relative;
                 overflow: hidden;
+                padding: 8px;
             }
 
             .logo::before {
@@ -91,6 +89,18 @@ function createFooter(options = {}) {
                 height: 200%;
                 background: conic-gradient(transparent, rgba(255, 255, 255, 0.3), transparent);
                 animation: rotate 3s linear infinite;
+                z-index: 1;
+            }
+
+            .logo-image {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 50%;
+                position: relative;
+                z-index: 2;
+                background: white;
+                padding: 2px;
             }
 
             .logo-text {
@@ -283,6 +293,32 @@ function createFooter(options = {}) {
                 box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
             }
 
+            /* Image loading states */
+            .logo-image.loading {
+                opacity: 0.5;
+            }
+
+            .logo-image.error {
+                display: none;
+            }
+
+            .logo-fallback {
+                width: 100%;
+                height: 100%;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+                position: relative;
+                z-index: 2;
+            }
+
+            .logo-image.error + .logo-fallback {
+                display: flex;
+            }
+
             @media (max-width: 768px) {
                 .footer-content {
                     grid-template-columns: 1fr;
@@ -330,7 +366,10 @@ function createFooter(options = {}) {
             
             <div class="footer-container">
                 <div class="logo-section">
-                    <div class="logo">${config.logoLetter}</div>
+                    <div class="logo">
+                        <img src="${config.logoImage}" alt="${config.logoAlt}" class="logo-image" />
+                        <div class="logo-fallback">${config.brandName.charAt(0)}</div>
+                    </div>
                     <div class="logo-text">${config.brandName}</div>
                 </div>
                 
@@ -366,10 +405,6 @@ function createFooter(options = {}) {
                                 <span class="contact-icon">📧</span>
                                 <span>${config.email}</span>
                             </div>
-                            <div class="contact-item" data-type="phone">
-                                <span class="contact-icon">📱</span>
-                                <span>${config.phone}</span>
-                            </div>
                             <div class="contact-item">
                                 <span class="contact-icon">📍</span>
                                 <span>${config.address}</span>
@@ -396,6 +431,22 @@ function createFooter(options = {}) {
 
     // JavaScript functionality
     function initFooter() {
+        // Handle logo image loading
+        const logoImage = document.querySelector('.logo-image');
+        if (logoImage) {
+            logoImage.addEventListener('load', function() {
+                this.classList.remove('loading');
+            });
+
+            logoImage.addEventListener('error', function() {
+                this.classList.add('error');
+                console.warn('Footer logo image failed to load:', config.logoImage);
+            });
+
+            // Add loading class initially
+            logoImage.classList.add('loading');
+        }
+
         // Back to top functionality
         window.scrollToTop = function() {
             window.scrollTo({
@@ -568,7 +619,8 @@ function createFooter(options = {}) {
                 // Extract configuration from data attributes
                 const config = {};
                 
-                if (scriptTag.getAttribute('data-logo')) config.logoLetter = scriptTag.getAttribute('data-logo');
+                if (scriptTag.getAttribute('data-logo-image')) config.logoImage = scriptTag.getAttribute('data-logo-image');
+                if (scriptTag.getAttribute('data-logo-alt')) config.logoAlt = scriptTag.getAttribute('data-logo-alt');
                 if (scriptTag.getAttribute('data-brand')) config.brandName = scriptTag.getAttribute('data-brand');
                 if (scriptTag.getAttribute('data-email')) config.email = scriptTag.getAttribute('data-email');
                 if (scriptTag.getAttribute('data-phone')) config.phone = scriptTag.getAttribute('data-phone');

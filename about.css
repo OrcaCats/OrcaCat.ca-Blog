@@ -160,30 +160,6 @@ h1, h2, h3 {
     transform: scale(1.05);
 }
 
-.profile-status {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: var(--text-muted);
-    font-size: 14px;
-}
-
-.status-indicator {
-    width: 10px;
-    height: 10px;
-    background: #28a745;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.7; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
 .profile-content h2 {
     font-size: 36px;
     margin-bottom: 25px;
@@ -370,6 +346,97 @@ h1, h2, h3 {
 }
 
 /* ========================================
+   CLUBS & ORGANIZATIONS SECTION
+   ======================================== */
+.clubs-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.club-card {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+    border-left-color: var(--secondary-color);
+}
+
+.club-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.club-icon-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.club-card:hover .club-icon-img {
+    transform: scale(1.1);
+}
+
+.club-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 22px;
+    color: var(--text-primary);
+}
+
+.club-card h4 {
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.club-card p {
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.club-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.club-tag {
+    background: var(--background-light);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
+    transition: var(--transition);
+}
+
+.club-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ========================================
    INTERESTS SECTION
    ======================================== */
 .interests-section {
@@ -398,9 +465,23 @@ h1, h2, h3 {
 }
 
 .interest-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
-    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interest-icon-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.interest-card:hover .interest-icon-img {
+    transform: scale(1.1);
 }
 
 .interest-card h3 {
@@ -412,74 +493,6 @@ h1, h2, h3 {
     margin: 0;
     line-height: 1.6;
     color: var(--text-muted);
-}
-
-/* ========================================
-   CONTACT CTA SECTION
-   ======================================== */
-.contact-cta {
-    padding: 80px 0;
-    background: var(--primary-gradient);
-    color: white;
-}
-
-.cta-content {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.cta-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.cta-content p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    opacity: 0.9;
-    line-height: 1.6;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cta-button {
-    padding: 15px 30px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: var(--transition);
-    display: inline-block;
-}
-
-.cta-button.primary {
-    background: white;
-    color: var(--primary-color);
-}
-
-.cta-button.primary:hover {
-    background: #f8f9fa;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-}
-
-.cta-button.secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.cta-button.secondary:hover {
-    background: white;
-    color: var(--primary-color);
-    transform: translateY(-2px);
 }
 
 /* ========================================
@@ -547,21 +560,6 @@ h1, h2, h3 {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
-    .cta-content h2 {
-        font-size: 28px;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    .cta-button {
-        width: 200px;
-        text-align: center;
-    }
 }
 
 @media (max-width: 480px) {
@@ -582,8 +580,7 @@ h1, h2, h3 {
     .profile-section,
     .skills-section,
     .timeline-section,
-    .interests-section,
-    .contact-cta {
+    .interests-section {
         padding: 60px 0;
     }
     
@@ -601,10 +598,6 @@ h1, h2, h3 {
     .timeline-item {
         padding-left: 50px;
     }
-    
-    .cta-content {
-        padding: 0 15px;
-    }
 }
 
 /* ========================================
@@ -617,10 +610,6 @@ h1, h2, h3 {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-    }
-    
-    .status-indicator {
-        animation: none;
     }
 }
 
@@ -644,18 +633,5 @@ h1, h2, h3 {
     .skill-category,
     .timeline-content {
         box-shadow: none !important;
-    }
-    
-    .contact-cta {
-        background: none !important;
-        color: var(--text-primary) !important;
-    }
-    
-    .cta-content h2 {
-        color: var(--text-primary) !important;
-    }
-    
-    .cta-buttons {
-        display: none !important;
     }
 }
