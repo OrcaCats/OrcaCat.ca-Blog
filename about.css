@@ -1,9 +1,9 @@
 /* ========================================
-   ABOUT PAGE - CONSOLIDATED STYLES
+   ABOUT PAGE - CONSOLIDATED STYLES WITH DARK MODE
    ======================================== */
 
 /* ========================================
-   CSS CUSTOM PROPERTIES (from projects.css)
+   CSS CUSTOM PROPERTIES WITH DARK MODE SUPPORT
    ======================================== */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -13,45 +13,167 @@
     --text-secondary: #6c757d;
     --text-muted: #666;
     --background-light: #f8f9fa;
+    --background-white: #ffffff;
     --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     --card-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
     --border-radius: 12px;
     --border-radius-small: 5px;
     --transition: all 0.3s ease;
+    --border-color: #e9ecef;
+    --skill-tag-bg: #f8f9fa;
+    --input-bg: #ffffff;
+    --hover-bg: #f8f9fa;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --text-primary: #e8e6f0;
+    --text-secondary: #a8a2b8;
+    --text-muted: #d2cedc;
+    --background-light: #2d2a3a;
+    --background-white: #1a1725;
+    --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    --card-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.6);
+    --border-color: #3d3748;
+    --skill-tag-bg: #3d3748;
+    --input-bg: #2d2a3a;
+    --hover-bg: #3d3748;
 }
 
 /* ========================================
-   BASE LAYOUT & TYPOGRAPHY (consistent with projects.css)
+   UNIVERSAL DARK MODE STYLES
    ======================================== */
+*, *::before, *::after {
+    transition: background-color var(--transition), 
+                color var(--transition), 
+                border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+/* Base elements that should automatically adapt */
 body, html {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
-
-.site-container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-h1, h2, h3 {
+    background-color: var(--background-white);
     color: var(--text-primary);
 }
 
+/* Text elements */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+}
+
+p {
+    color: var(--text-muted);
+}
+
+/* All cards, containers, and sections */
+.card,
+.section,
+.container,
+[class*="card"],
+[class*="section"]:not([class*="header"]) {
+    background-color: var(--background-white);
+    border-color: var(--border-color);
+}
+
+/* Form elements */
+input, textarea, select {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary-color);
+}
+
+/* Buttons and interactive elements */
+button:not(.theme-toggle) {
+    background-color: var(--background-white);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+button:hover:not(.theme-toggle) {
+    background-color: var(--hover-bg);
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* ========================================
+   DARK MODE TOGGLE (minimal HTML needed)
+   ======================================== */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--background-white);
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    padding: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-toggle:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: scale(1.05);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.theme-toggle-inner {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background: var(--primary-gradient);
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.theme-toggle-slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+[data-theme="dark"] .theme-toggle-slider {
+    transform: translateX(26px);
+}
+
+/* ========================================
+   EXISTING STYLES (updated for dark mode compatibility)
+   ======================================== */
 .title1 {
     font-size: 50px;
     margin: 0;
     text-align: center;
 }
 
-/* ========================================
-   ABOUT HEADER (consistent with project header)
-   ======================================== */
+/* About Header */
 .about-header {
     height: 120px;
     margin-top: 85px;
@@ -89,9 +211,7 @@ h1, h2, h3 {
     font-weight: 300;
 }
 
-/* ========================================
-   MAIN CONTENT CONTAINER
-   ======================================== */
+/* Main Content */
 .about-content {
     padding: 0;
 }
@@ -122,12 +242,10 @@ h1, h2, h3 {
     border-radius: 2px;
 }
 
-/* ========================================
-   PROFILE SECTION
-   ======================================== */
+/* Profile Section */
 .profile-section {
     padding: 80px 0;
-    background: white;
+    background: var(--background-white);
 }
 
 .profile-container {
@@ -150,7 +268,7 @@ h1, h2, h3 {
     height: 280px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid white;
+    border: 6px solid var(--background-white);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
 }
@@ -181,9 +299,7 @@ h1, h2, h3 {
     margin: 0;
 }
 
-/* ========================================
-   SKILLS SECTION (using card styling from projects)
-   ======================================== */
+/* Skills Section */
 .skills-section {
     padding: 80px 0;
     background: var(--background-light);
@@ -196,11 +312,12 @@ h1, h2, h3 {
 }
 
 .skill-category {
-    background: white;
+    background: var(--background-white);
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .skill-category:hover {
@@ -235,12 +352,10 @@ h1, h2, h3 {
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
-/* ========================================
-   TIMELINE SECTION
-   ======================================== */
+/* Timeline Section */
 .timeline-section {
     padding: 80px 0;
-    background: white;
+    background: var(--background-white);
 }
 
 .timeline {
@@ -274,19 +389,20 @@ h1, h2, h3 {
     top: 8px;
     width: 20px;
     height: 20px;
-    background: white;
+    background: var(--background-white);
     border: 4px solid var(--primary-color);
     border-radius: 50%;
     z-index: 1;
 }
 
 .timeline-content {
-    background: white;
+    background: var(--background-white);
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
     position: relative;
+    border: 1px solid var(--border-color);
 }
 
 .timeline-content:hover {
@@ -300,7 +416,7 @@ h1, h2, h3 {
     left: -10px;
     top: 20px;
     border: 10px solid transparent;
-    border-right-color: white;
+    border-right-color: var(--background-white);
 }
 
 .timeline-date {
@@ -336,21 +452,19 @@ h1, h2, h3 {
 }
 
 .timeline-tag {
-    background: #f8f9fa;
+    background: var(--skill-tag-bg);
     color: var(--text-secondary);
     padding: 4px 10px;
     border-radius: 12px;
     font-size: 12px;
     font-weight: 500;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--border-color);
 }
 
-/* ========================================
-   CLUBS & ORGANIZATIONS SECTION
-   ======================================== */
+/* Clubs & Organizations Section */
 .clubs-section {
     padding: 80px 0;
-    background: white;
+    background: var(--background-white);
 }
 
 .clubs-grid {
@@ -360,11 +474,13 @@ h1, h2, h3 {
 }
 
 .club-card {
-    background: white;
+    background: var(--background-white);
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+    border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
 }
 
@@ -388,6 +504,10 @@ h1, h2, h3 {
     height: 48px;
     object-fit: contain;
     transition: var(--transition);
+}
+
+[data-theme="dark"] .club-icon-img {
+    filter: brightness(0.9) contrast(1.1);
 }
 
 .club-card:hover .club-icon-img {
@@ -420,13 +540,13 @@ h1, h2, h3 {
 }
 
 .club-tag {
-    background: var(--background-light);
+    background: var(--skill-tag-bg);
     color: var(--text-secondary);
     padding: 6px 12px;
     border-radius: 15px;
     font-size: 12px;
     font-weight: 500;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
@@ -436,9 +556,7 @@ h1, h2, h3 {
     border-color: var(--primary-color);
 }
 
-/* ========================================
-   INTERESTS SECTION
-   ======================================== */
+/* Interests Section */
 .interests-section {
     padding: 80px 0;
     background: var(--background-light);
@@ -451,12 +569,13 @@ h1, h2, h3 {
 }
 
 .interest-card {
-    background: white;
+    background: var(--background-white);
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     text-align: center;
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .interest-card:hover {
@@ -480,6 +599,10 @@ h1, h2, h3 {
     transition: var(--transition);
 }
 
+[data-theme="dark"] .interest-icon-img {
+    filter: brightness(0.9) contrast(1.1);
+}
+
 .interest-card:hover .interest-icon-img {
     transform: scale(1.1);
 }
@@ -495,8 +618,31 @@ h1, h2, h3 {
     color: var(--text-muted);
 }
 
+.funfacts-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;        /* enables horizontal scrolling */
+    padding-bottom: 10px;    /* space for scrollbar */
+    scroll-snap-type: x mandatory; /* optional: snap effect */
+}
+
+.funfacts-grid::-webkit-scrollbar {
+    height: 8px;             /* slim scrollbar for horizontal */
+}
+
+.funfacts-grid::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.funfacts-grid .interest-card {
+    flex: 0 0 250px;         /* fixed width per card */
+    scroll-snap-align: start; /* optional: snap effect */
+}
+
+
 /* ========================================
-   RESPONSIVE DESIGN (consistent with projects.css)
+   RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 768px) {
     .title1 {
@@ -560,6 +706,26 @@ h1, h2, h3 {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        padding: 6px;
+    }
+
+    .theme-toggle-inner {
+        width: 40px;
+        height: 20px;
+    }
+
+    .theme-toggle-slider {
+        width: 16px;
+        height: 16px;
+    }
+
+    [data-theme="dark"] .theme-toggle-slider {
+        transform: translateX(20px);
+    }
 }
 
 @media (max-width: 480px) {
@@ -613,6 +779,15 @@ h1, h2, h3 {
     }
 }
 
+/* Focus styles for accessibility */
+.club-card:focus-within,
+.interest-card:focus-within,
+.skill-category:focus-within,
+.timeline-content:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 /* ========================================
    PRINT STYLES
    ======================================== */
@@ -631,7 +806,12 @@ h1, h2, h3 {
     .profile-image,
     .interest-card,
     .skill-category,
-    .timeline-content {
+    .timeline-content,
+    .club-card {
         box-shadow: none !important;
+    }
+
+    .theme-toggle {
+        display: none !important;
     }
 }

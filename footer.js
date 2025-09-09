@@ -1,17 +1,15 @@
 /**
- * Self-Contained Footer Component
+ * Self-Contained Footer Component with Dark Mode Support
  * Usage: createFooter(options)
  */
 
 function createFooter(options = {}) {
     // Default configuration
     const config = {
-        logoImage: 'https://via.placeholder.com/70x70/7c3aed/ffffff?text=L', // Default placeholder image
-        logoAlt: 'OrcaCat Logo',
+        logoImage: '/assets/logo.png', // Default placeholder image
+        logoAlt: 'Orcacat!',
         brandName: 'Orcacat Blog',
-        email: 'micah.hou@outlook.com',
-        address: '123 Web Street, Digital City',
-        hours: 'Mon-Fri: 9AM-6PM',
+        email: 'therealorcacat@gmail.com',
         socialLinks: {
             facebook: '#',
             twitter: '#',
@@ -20,10 +18,10 @@ function createFooter(options = {}) {
             github: '#'
         },
         navLinks: {
-            home: '#home',
-            about: '#about',
-            projects: '#projects',
-            blog: '#blog'
+            home: 'home.html',
+            about: 'about.html',
+            projects: 'projects.html',
+            blog: 'blog.html'
         },
         sitemap: '#sitemap',
         description: 'We create exceptional digital experiences that inspire and engage. Our passion for innovation drives everything we do.',
@@ -31,16 +29,39 @@ function createFooter(options = {}) {
         ...options
     };
 
-    // CSS Styles
+    // CSS Styles - Updated for Dark Mode Compatibility
     const styles = `
         <style id="footer-styles">
+            /* Ensure CSS variables are available */
+            :root {
+                --footer-bg-light: linear-gradient(135deg, #3b1f6b 0%, #5b21b6 50%, #7c3aed 100%);
+                --footer-text-light: #ffffff;
+                --footer-accent-light: #c084fc;
+                --footer-muted-light: #b0bec5;
+                --footer-border-light: rgba(255, 255, 255, 0.1);
+            }
+
+            [data-theme="dark"] {
+                --footer-bg-dark: linear-gradient(135deg, #2d1b3d 0%, #4c1d95 50%, #6b21a8 100%);
+                --footer-text-dark: #e8e6f0;
+                --footer-accent-dark: #d8b4fe;
+                --footer-muted-dark: #a8a2b8;
+                --footer-border-dark: rgba(216, 180, 254, 0.2);
+            }
+
             .footer {
-                background: linear-gradient(135deg, #3b1f6b 0%, #5b21b6 50%, #7c3aed 100%);
-                color: #ffffff;
+                background: var(--footer-bg-light);
+                color: var(--footer-text-light);
                 padding: 3rem 0 1rem;
                 position: relative;
                 overflow: hidden;
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .footer {
+                background: var(--footer-bg-dark);
+                color: var(--footer-text-dark);
             }
 
             .footer::before {
@@ -50,7 +71,12 @@ function createFooter(options = {}) {
                 left: 0;
                 right: 0;
                 height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                background: linear-gradient(90deg, transparent, var(--footer-border-light), transparent);
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .footer::before {
+                background: linear-gradient(90deg, transparent, var(--footer-border-dark), transparent);
             }
 
             .footer-container {
@@ -78,6 +104,11 @@ function createFooter(options = {}) {
                 position: relative;
                 overflow: hidden;
                 padding: 8px;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .logo {
+                box-shadow: 0 4px 20px rgba(216, 180, 254, 0.3);
             }
 
             .logo::before {
@@ -92,6 +123,10 @@ function createFooter(options = {}) {
                 z-index: 1;
             }
 
+            [data-theme="dark"] .logo::before {
+                background: conic-gradient(transparent, rgba(216, 180, 254, 0.4), transparent);
+            }
+
             .logo-image {
                 width: 100%;
                 height: 100%;
@@ -101,12 +136,18 @@ function createFooter(options = {}) {
                 z-index: 2;
                 background: white;
                 padding: 2px;
+                transition: all 0.3s ease;
             }
 
             .logo-text {
                 font-size: 1.5rem;
                 font-weight: 600;
-                color: #c084fc;
+                color: var(--footer-accent-light);
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .logo-text {
+                color: var(--footer-accent-dark);
             }
 
             @keyframes rotate {
@@ -122,11 +163,16 @@ function createFooter(options = {}) {
             }
 
             .footer-section h3 {
-                color: #c084fc;
+                color: var(--footer-accent-light);
                 margin-bottom: 1rem;
                 font-size: 1.2rem;
                 font-weight: 600;
                 position: relative;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .footer-section h3 {
+                color: var(--footer-accent-dark);
             }
 
             .footer-section h3::after {
@@ -136,8 +182,13 @@ function createFooter(options = {}) {
                 left: 0;
                 width: 30px;
                 height: 2px;
-                background: linear-gradient(90deg, #c084fc, #a855f7);
+                background: linear-gradient(90deg, var(--footer-accent-light), #a855f7);
                 border-radius: 1px;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .footer-section h3::after {
+                background: linear-gradient(90deg, var(--footer-accent-dark), #c084fc);
             }
 
             .footer-links {
@@ -151,16 +202,24 @@ function createFooter(options = {}) {
             }
 
             .footer-links a {
-                color: #b0bec5;
+                color: var(--footer-muted-light);
                 text-decoration: none;
                 transition: all 0.3s ease;
                 display: inline-block;
                 position: relative;
             }
 
+            [data-theme="dark"] .footer-links a {
+                color: var(--footer-muted-dark);
+            }
+
             .footer-links a:hover {
-                color: #c084fc;
+                color: var(--footer-accent-light);
                 transform: translateX(5px);
+            }
+
+            [data-theme="dark"] .footer-links a:hover {
+                color: var(--footer-accent-dark);
             }
 
             .footer-links a::before {
@@ -175,9 +234,14 @@ function createFooter(options = {}) {
             }
 
             .footer-description {
-                color: #90a4ae;
+                color: var(--footer-muted-light);
                 line-height: 1.6;
                 margin-bottom: 1rem;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .footer-description {
+                color: var(--footer-muted-dark);
             }
 
             .social-links {
@@ -192,22 +256,34 @@ function createFooter(options = {}) {
                 justify-content: center;
                 width: 40px;
                 height: 40px;
-                background: rgba(255, 255, 255, 0.1);
+                background: var(--footer-border-light);
                 border-radius: 50%;
-                color: #b0bec5;
+                color: var(--footer-muted-light);
                 text-decoration: none;
                 transition: all 0.3s ease;
                 backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                border: 1px solid var(--footer-border-light);
                 position: relative;
                 overflow: hidden;
             }
 
+            [data-theme="dark"] .social-link {
+                background: var(--footer-border-dark);
+                border-color: var(--footer-border-dark);
+                color: var(--footer-muted-dark);
+            }
+
             .social-link:hover {
                 background: rgba(192, 132, 252, 0.2);
-                color: #c084fc;
+                color: var(--footer-accent-light);
                 transform: translateY(-2px) scale(1.1);
                 box-shadow: 0 5px 15px rgba(192, 132, 252, 0.3);
+            }
+
+            [data-theme="dark"] .social-link:hover {
+                background: rgba(216, 180, 254, 0.2);
+                color: var(--footer-accent-dark);
+                box-shadow: 0 5px 15px rgba(216, 180, 254, 0.3);
             }
 
             .contact-info {
@@ -219,13 +295,21 @@ function createFooter(options = {}) {
             .contact-item {
                 display: flex;
                 align-items: center;
-                color: #b0bec5;
+                color: var(--footer-muted-light);
                 gap: 0.5rem;
                 transition: color 0.3s ease;
             }
 
+            [data-theme="dark"] .contact-item {
+                color: var(--footer-muted-dark);
+            }
+
             .contact-item:hover {
-                color: #c084fc;
+                color: var(--footer-accent-light);
+            }
+
+            [data-theme="dark"] .contact-item:hover {
+                color: var(--footer-accent-dark);
             }
 
             .contact-icon {
@@ -235,20 +319,30 @@ function createFooter(options = {}) {
             }
 
             .footer-bottom {
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                border-top: 1px solid var(--footer-border-light);
                 padding-top: 1.5rem;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 1rem;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .footer-bottom {
+                border-top-color: var(--footer-border-dark);
             }
 
             .footer-bottom-left {
-                color: #90a4ae;
+                color: var(--footer-muted-light);
                 font-size: 0.9rem;
                 flex: 1;
                 text-align: center;
+                transition: all 0.3s ease;
+            }
+
+            [data-theme="dark"] .footer-bottom-left {
+                color: var(--footer-muted-dark);
             }
 
             .footer-bottom-right {
@@ -258,14 +352,22 @@ function createFooter(options = {}) {
             }
 
             .footer-bottom-right a {
-                color: #b0bec5;
+                color: var(--footer-muted-light);
                 text-decoration: none;
                 font-size: 0.9rem;
                 transition: color 0.3s ease;
             }
 
+            [data-theme="dark"] .footer-bottom-right a {
+                color: var(--footer-muted-dark);
+            }
+
             .footer-bottom-right a:hover {
-                color: #c084fc;
+                color: var(--footer-accent-light);
+            }
+
+            [data-theme="dark"] .footer-bottom-right a:hover {
+                color: var(--footer-accent-dark);
             }
 
             .back-to-top {
@@ -288,9 +390,18 @@ function createFooter(options = {}) {
                 visibility: hidden;
             }
 
+            [data-theme="dark"] .back-to-top {
+                background: linear-gradient(135deg, #6b21a8, #c084fc);
+                box-shadow: 0 4px 15px rgba(216, 180, 254, 0.3);
+            }
+
             .back-to-top:hover {
                 transform: translateY(-3px) scale(1.1);
                 box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+            }
+
+            [data-theme="dark"] .back-to-top:hover {
+                box-shadow: 0 8px 25px rgba(216, 180, 254, 0.4);
             }
 
             /* Image loading states */
@@ -405,13 +516,17 @@ function createFooter(options = {}) {
                                 <span class="contact-icon">📧</span>
                                 <span>${config.email}</span>
                             </div>
+                            <div class="contact-item" data-type="phone">
+                                <span class="contact-icon">📱</span>
+                                <span>${config.phone || ''}</span>
+                            </div>
                             <div class="contact-item">
                                 <span class="contact-icon">📍</span>
-                                <span>${config.address}</span>
+                                <span>${config.address || ''}</span>
                             </div>
                             <div class="contact-item">
                                 <span class="contact-icon">🕒</span>
-                                <span>${config.hours}</span>
+                                <span>${config.hours || ''}</span>
                             </div>
                         </div>
                     </div>
@@ -514,13 +629,16 @@ function createFooter(options = {}) {
                 item.style.cursor = 'pointer';
                 item.addEventListener('click', function() {
                     const email = this.textContent.trim().split(' ')[1];
-                    window.open(`mailto:${email}`, '_blank');
+                    if (email) window.open(`mailto:${email}`, '_blank');
                 });
             } else if (type === 'phone') {
                 item.style.cursor = 'pointer';
                 item.addEventListener('click', function() {
-                    const phone = this.textContent.trim().match(/[\+\d\(\)\-\s]+/)[0];
-                    window.open(`tel:${phone.replace(/\D/g, '')}`, '_blank');
+                    const phoneText = this.textContent.trim();
+                    const phone = phoneText.match(/[\+\d\(\)\-\s]+/);
+                    if (phone && phone[0]) {
+                        window.open(`tel:${phone[0].replace(/\D/g, '')}`, '_blank');
+                    }
                 });
             }
         });

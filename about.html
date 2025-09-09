@@ -1,198 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Your Portfolio</title>
-    <link rel="stylesheet" href="about.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Micah Hou</title>
+  <link rel="stylesheet" href="about.css" />
 </head>
 <body>
-    <div class="site-container">
-        <!-- About Header Section -->
-        <div class="about-header">
-            <div class="about-hero">
-                <h1 class="title1">About Me</h1>
-                <p class="hero-subtitle">Passionate Developer & Community <Cap></Cap>ontribuitior</p>
+  <div class="site-container">
+    <!-- About Header Section -->
+    <div class="about-header">
+      <div class="about-hero">
+        <h1 class="title1">About Me</h1>
+        <p class="hero-subtitle">The Community Developer</p>
+      </div>
+    </div>
+
+    <!-- Main About Content -->
+    <div class="about-content">
+
+      <!-- Profile Section -->
+      <section class="profile-section">
+        <div class="profile-container">
+          <div class="profile-image-wrapper">
+            <img src="assets/pfp.png" alt="Profile Picture" class="profile-image" />
+          </div>
+          <div class="profile-content">
+            <h2>Hi, I'm Micah Hou — also known as TheOrcaCat</h2>
+            <p class="profile-intro">
+              I'm a high school student at Elgin Park Secondary passionate about biomedical engineering, tech, and community-driven innovation.
+            </p>
+            <p class="profile-description">
+              From building DIY qPCR machines and genetic testing kits to leading workshops for local students, I thrive at the intersection of technology, medicine, and outreach. When I’m not tinkering with microcontrollers or debugging 3D printers, I’m walking in the park, reading up on emerging tech, or planning for my clubs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision & Values (uses skills-section card styles) -->
+      <section class="skills-section" aria-labelledby="vision-title">
+        <div class="section-container">
+          <h2 id="vision-title" class="section-title">My Vision & Values</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>Build for Impact</h3>
+              <p>I’m focused on accessible science—low-cost diagnostics, open workshops, and tools that help under-resourced communities learn and thrive.</p>
             </div>
+            <div class="skill-category">
+              <h3>Learn by Doing</h3>
+              <p>I prototype first, polish later. I document failures and breakthroughs alike to help others learn faster than I did.</p>
+            </div>
+            <div class="skill-category">
+              <h3>Systems Developer</h3>
+              <p>I like creating structures—whether it’s project workflows, club initiatives, or a workshop curriculum—that make it easier for everyone to contribute, learn, and succeed sustainably.</p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- Main About Content -->
-        <div class="about-content">
-            <!-- Profile Section -->
-            <section class="profile-section">
-                <div class="profile-container">
-                    <div class="profile-image-wrapper">
-                        <img src="assets/profile-image.jpg" alt="Profile Picture" class="profile-image">
-                    </div>
-                    <div class="profile-content">
-                        <h2>Hi, I'm Micah Hou, also known as TheOrcaCat</h2>
-                        <p class="profile-intro">
-                            Hi! I'm Micah Hou, a high school student at Elgin Park Secondary passionate about biomedical engineering, tech, and community service. 
-                        </p>
-                        <p class="profile-description">
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in the power of clean code, thoughtful design, and continuous learning.
-                        </p>
-                    </div>
-                </div>
-            </section>
+      <!-- Clubs & Organizations -->
+      <section class="clubs-section" aria-labelledby="clubs-title">
+        <div class="section-container">
+          <h2 id="clubs-title" class="section-title">Clubs & Organizations</h2>
+          <div class="clubs-grid">
 
-            <!-- Skills Section 
-            <section class="skills-section">
-                <div class="section-container">
-                    <h2 class="section-title">Skills & Expertise</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Frontend Development</h3>
-                            <div class="skills-list">
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Vue.js</span>
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3</span>
-                                <span class="skill-tag">Sass</span>
-                                <span class="skill-tag">TypeScript</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Backend Development</h3>
-                            <div class="skills-list">
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Express.js</span>
-                                <span class="skill-tag">Django</span>
-                                <span class="skill-tag">PostgreSQL</span>
-                                <span class="skill-tag">MongoDB</span>
-                                <span class="skill-tag">REST APIs</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Tools & Technologies</h3>
-                            <div class="skills-list">
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">Figma</span>
-                                <span class="skill-tag">Webpack</span>
-                                <span class="skill-tag">Jest</span>
-                                <span class="skill-tag">CI/CD</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
+            <!-- Technology Club -->
+            <div class="club-card">
+              <div class="club-icon">
+                <img src="assets/icons/TechClub-Logo.png" alt="Technology Club" class="club-icon-img" />
+              </div>
+              <h3>Technology Club (The Idea Lab)</h3>
+              <h4>Founder and President</h4>
+              <p>Founded a student-run makerspace focused on 3D printing, electronics, biomedical engineering, and coding outreach. Ran workshops, community projects, and student printing services to foster hands-on innovation.</p>
+              <div class="club-tags">
+                <span class="club-tag">3D Printing</span>
+                <span class="club-tag">Biomedical Engineering</span>
+                <span class="club-tag">STEM Outreach</span>
+              </div>
+            </div>
 
-            <!-- Clubs & Organizations -->
-<section class="clubs-section">
+            <!-- Peer Leadership Council -->
+            <div class="club-card">
+              <div class="club-icon">
+                <img src="assets/icons/PLC-Logo.jpg" alt="Peer Leadership Council" class="club-icon-img" />
+              </div>
+              <h3>Peer Leadership Council</h3>
+              <h4>Events Executive</h4>
+              <p>Organized school-wide leadership events, mentored peers, and coordinated student-led initiatives to strengthen school culture and inclusivity.</p>
+              <div class="club-tags">
+                <span class="club-tag">Leadership</span>
+                <span class="club-tag">Event Planning</span>
+                <span class="club-tag">Collaboration</span>
+              </div>
+            </div>
+
+            <!-- Noble Youth Society -->
+            <div class="club-card">
+              <div class="club-icon">
+                <img src="assets/icons/NYS-Logo.png" alt="Noble Youth Society" class="club-icon-img" />
+              </div>
+              <h3>Noble Youth Society</h3>
+              <h4>Director of Technology</h4>
+              <p>Managed cloud migration and tech infrastructure for a nonprofit youth organization. Supported major events, maintained backend systems, and built tools for outreach.</p>
+              <div class="club-tags">
+                <span class="club-tag">Technology</span>
+                <span class="club-tag">Nonprofit</span>
+                <span class="club-tag">Community Outreach</span>
+              </div>
+            </div>
+
+            <!-- Programming Club -->
+            <div class="club-card">
+              <div class="club-icon">
+                <img src="assets/icons/student-council-icon.png" alt="Computer Programming Club" class="club-icon-img" />
+              </div>
+              <h3>Computer Programming Club</h3>
+              <h4>Member</h4>
+              <p>Contributed to the school website, collaborated on algorithm challenges, and explored topics like competitive programming and full-stack development.</p>
+              <div class="club-tags">
+                <span class="club-tag">Coding</span>
+                <span class="club-tag">Problem-Solving</span>
+                <span class="club-tag">Teamwork</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interests (expanded) -->
+      <section class="interests-section" aria-labelledby="interests-title">
+        <div class="section-container">
+          <h2 id="interests-title" class="section-title">Interests</h2>
+          <div class="interests-grid">
+            <div class="interest-card">
+              <div class="interest-icon">
+              </div>
+              <h3>Biomedical Engineering</h3>
+              <p>DIY biosensors, qPCR devices, and stat-mech modeling for immunoassays.</p>
+            </div>
+            <div class="interest-card">
+              <div class="interest-icon">
+              </div>
+              <h3>Microcontrollers</h3>
+              <p>Arduino workshops; sensor kits for health, sports, and learning analytics.</p>
+            </div>
+            <div class="interest-card">
+              <div class="interest-icon">
+              </div>
+              <h3>3D Printing</h3>
+              <p>Prototypes, fixtures, and the pile of plastic spaghetti. Multicolor prints when I’m feeling fancy.</p>
+            </div>
+            <div class="interest-card">
+              <div class="interest-icon">
+              </div>
+              <h3>Cloud & Web</h3>
+              <p>JSON-driven sites and S3 + CloudFront hosting for smooth deploys.</p>
+            </div>
+            <div class="interest-card">
+              <div class="interest-icon">
+              </div>
+              <h3>Reading</h3>
+              <p>Science papers, sci-fi, and tech blogs—feeding both sides of the brain.</p>
+            </div>
+            <div class="interest-card">
+              <div class="interest-icon">
+              </div>
+              <h3>Grounders</h3>
+  <p>A classic playground game — equal parts strategy, balance, and fun. It keeps me connected to my roots and reminds me that creativity doesn’t always need a computer or a lab.</p>
+</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fun Facts (reuses interest card styles for consistency) -->
+      <section class="interests-section" aria-labelledby="funfacts-title">
   <div class="section-container">
-    <h2 class="section-title">Clubs & Organizations</h2>
-    <div class="clubs-grid">
-
-      <!-- Technology Club -->
-      <div class="club-card">
-        <div class="club-icon">
-          <img src="assets/icons/TechClub-Logo.png" alt="Technology Club" class="club-icon-img">
+    <h2 id="funfacts-title" class="section-title">Fun Facts</h2>
+    <div class="funfacts-grid">
+            <div class="interest-card">
+              <div class="interest-icon">
+                <img src="assets/icons/cat-icon.png" alt="OrcaCat" class="interest-icon-img" />
+              </div>
+              <h3>Orca + Cat = 🐋🐱</h3>
+              <p>“OrcaCat” blends my school’s mascot with my very real, very shy cat.</p>
+            </div>
+            <div class="interest-card">
+              <div class="interest-icon">
+                <img src="assets/icons/night-owl-icon.png" alt="Night Owl" class="interest-icon-img" />
+              </div>
+              <h3>Night Owl Engineer</h3>
+              <p>Most bugs appear after 11 PM. Most fixes do too.</p>
+            </div>
+            </div>
+            <div class="interest-card">
+              <div class="interest-icon">
+                <img src="assets/icons/leaf-icon.png" alt="Parks" class="interest-icon-img" />
+              </div>
+              <h3>Park Walker</h3>
+              <p>My best ideas show up somewhere between trees and trail markers.</p>
+            </div>
+          </div>
         </div>
-        <h3>Technology Club (The Idea Lab)</h3>
-        <h4>Founder and President</h4>
-        <p>Founded a student-run makerspace dedicated to 3D printing, electronics, biomedical engineering, and coding outreach. Organized workshops, community projects, and student printing initiatives to promote innovation at Elgin Park.</p>
-        <div class="club-tags">
-          <span class="club-tag">3D Printing</span>
-          <span class="club-tag">Biomedical Engineering</span>
-          <span class="club-tag">STEM Outreach</span>
-        </div>
-      </div>
-
-      <!-- Peer Leadership Council -->
-      <div class="club-card">
-        <div class="club-icon">
-          <img src="assets/icons/PLC-Logo.jpg" alt="Peer Leadership Council" class="club-icon-img">
-        </div>
-        <h3>Peer Leadership Council</h3>
-        <h4>Events Executive</h4>
-        <p>Helped organize school-wide leadership events, mentored peers, and coordinated collaborative initiatives to strengthen student community and involvement.</p>
-        <div class="club-tags">
-          <span class="club-tag">Leadership</span>
-          <span class="club-tag">Event Planning</span>
-          <span class="club-tag">Collaboration</span>
-        </div>
-      </div>
-
-      <!-- Noble Youth Society -->
-      <div class="club-card">
-        <div class="club-icon">
-          <img src="assets/icons/NYS-Logo.png" alt="Noble Youth Society" class="club-icon-img">
-        </div>
-        <h3>Noble Youth Society</h3>
-        <h4>Director of Technology</h4>
-        <p>Oversaw technology and infrastructure for NYS, including migrating the organization’s website to cloud hosting and maintaining technical systems to support large-scale events and outreach initiatives.</p>
-        <div class="club-tags"> 
-          <span class="club-tag">Technology</span>
-          <span class="club-tag">Nonprofit</span>
-          <span class="club-tag">Community Outreach</span>
-        </div>
-      </div>
-
-      <!-- Computer Programming Club -->
-      <div class="club-card">
-        <div class="club-icon">
-          <img src="assets/icons/student-council-icon.png" alt="Computer Programming Club" class="club-icon-img">
-        </div>
-        <h3>Computer Programming Club</h3>
-        <h4>Member</h4>
-        <p>Participated in coding projects, contributed to collaborative programming challenges, and expanded knowledge in algorithms, web development, and competitive programming.</p>
-        <div class="club-tags">
-          <span class="club-tag">Coding</span>
-          <span class="club-tag">Problem-Solving</span>
-          <span class="club-tag">Teamwork</span>
-        </div>
-      </div>
+      </section>
 
     </div>
   </div>
-</section>
 
-
-            <!-- Interests & Hobbies -->
-            <section class="interests-section">
-                <div class="section-container">
-                    <h2 class="section-title">When I'm Not Coding</h2>
-                    <div class="interests-grid">
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <img src="assets/icons/music-icon.png" alt="Music Production" class="interest-icon-img">
-                            </div>
-                            <h3>Music Production</h3>
-                            <p>Creating electronic music and exploring sound design in my spare time.</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <img src="assets/icons/reading-icon.png" alt="Reading" class="interest-icon-img">
-                            </div>
-                            <h3>Reading</h3>
-                            <p>Always learning through tech blogs, books, and staying updated with industry trends.</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <img src="assets/icons/gardening-icon.png" alt="Gardening" class="interest-icon-img">
-                            </div>
-                            <h3>Gardening</h3>
-                            <p>Growing plants and finding peace in nature's systematic beauty.</p>
-                        </div>
-                        <div class="interest-card">
-                            <div class="interest-icon">
-                                <img src="assets/icons/gaming-icon.png" alt="Gaming" class="interest-icon-img">
-                            </div>
-                            <h3>Gaming</h3>
-                            <p>Enjoying indie games and analyzing game mechanics and user experiences.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <!-- Include Taskbar Component -->
-    <script src="taskbar.js"></script>
-    <script src="footer.js"></script>
+  <!-- Include Taskbar and Footer -->
+  <script src="taskbar.js"></script>
+  <script src="footer.js"></script>
+  <script src="darkMode.js"></script>
 </body>
 </html>
