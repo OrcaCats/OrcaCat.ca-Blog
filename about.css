@@ -1,10 +1,8 @@
 /* ========================================
-   ABOUT PAGE - CONSOLIDATED STYLES WITH DARK MODE
+   ABOUT PAGE - OPTIMIZED WITH DARK MODE
    ======================================== */
 
-/* ========================================
-   CSS CUSTOM PROPERTIES WITH DARK MODE SUPPORT
-   ======================================== */
+/* CSS Custom Properties */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --primary-color: #667eea;
@@ -17,7 +15,6 @@
     --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     --card-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
     --border-radius: 12px;
-    --border-radius-small: 5px;
     --transition: all 0.3s ease;
     --border-color: #e9ecef;
     --skill-tag-bg: #f8f9fa;
@@ -40,9 +37,7 @@
     --hover-bg: #3d3748;
 }
 
-/* ========================================
-   UNIVERSAL DARK MODE STYLES
-   ======================================== */
+/* Universal Dark Mode Transitions */
 *, *::before, *::after {
     transition: background-color var(--transition), 
                 color var(--transition), 
@@ -50,13 +45,12 @@
                 box-shadow var(--transition);
 }
 
-/* Base elements that should automatically adapt */
+/* Base Styles */
 body, html {
     background-color: var(--background-white);
     color: var(--text-primary);
 }
 
-/* Text elements */
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
 }
@@ -65,17 +59,13 @@ p {
     color: var(--text-muted);
 }
 
-/* All cards, containers, and sections */
-.card,
-.section,
-.container,
-[class*="card"],
-[class*="section"]:not([class*="header"]) {
+/* Universal Card/Container Styles */
+.card, .section, .container, [class*="card"], [class*="section"]:not([class*="header"]) {
     background-color: var(--background-white);
     border-color: var(--border-color);
 }
 
-/* Form elements */
+/* Form Elements */
 input, textarea, select {
     background-color: var(--input-bg);
     color: var(--text-primary);
@@ -86,7 +76,7 @@ input:focus, textarea:focus, select:focus {
     border-color: var(--primary-color);
 }
 
-/* Buttons and interactive elements */
+/* Buttons and Links */
 button:not(.theme-toggle) {
     background-color: var(--background-white);
     color: var(--text-primary);
@@ -97,7 +87,6 @@ button:hover:not(.theme-toggle) {
     background-color: var(--hover-bg);
 }
 
-/* Links */
 a {
     color: var(--primary-color);
 }
@@ -106,9 +95,7 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* ========================================
-   DARK MODE TOGGLE (minimal HTML needed)
-   ======================================== */
+/* Dark Mode Toggle */
 .theme-toggle {
     position: fixed;
     top: 20px;
@@ -164,16 +151,13 @@ a:hover {
     transform: translateX(26px);
 }
 
-/* ========================================
-   EXISTING STYLES (updated for dark mode compatibility)
-   ======================================== */
+/* Page Header */
 .title1 {
     font-size: 50px;
     margin: 0;
     text-align: center;
 }
 
-/* About Header */
 .about-header {
     height: 120px;
     margin-top: 85px;
@@ -211,7 +195,7 @@ a:hover {
     font-weight: 300;
 }
 
-/* Main Content */
+/* Common Section Styles */
 .about-content {
     padding: 0;
 }
@@ -267,10 +251,12 @@ a:hover {
     width: 280px;
     height: 280px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     border: 6px solid var(--background-white);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    background-color: var(--background-white);
 }
 
 .profile-image:hover {
@@ -479,7 +465,6 @@ a:hover {
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
-    border-left: 4px solid var(--primary-color);
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
 }
@@ -570,7 +555,7 @@ a:hover {
 
 .interest-card {
     background: var(--background-white);
-    padding: 30px;
+    padding: 20px 30px 30px 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
     text-align: center;
@@ -586,7 +571,7 @@ a:hover {
 .interest-icon {
     width: 64px;
     height: 64px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 10px auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -618,16 +603,17 @@ a:hover {
     color: var(--text-muted);
 }
 
+/* Fun Facts Grid (Horizontal Scroll) */
 .funfacts-grid {
     display: flex;
     gap: 20px;
-    overflow-x: auto;        /* enables horizontal scrolling */
-    padding-bottom: 10px;    /* space for scrollbar */
-    scroll-snap-type: x mandatory; /* optional: snap effect */
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
 }
 
 .funfacts-grid::-webkit-scrollbar {
-    height: 8px;             /* slim scrollbar for horizontal */
+    height: 8px;
 }
 
 .funfacts-grid::-webkit-scrollbar-thumb {
@@ -636,27 +622,20 @@ a:hover {
 }
 
 .funfacts-grid .interest-card {
-    flex: 0 0 250px;         /* fixed width per card */
-    scroll-snap-align: start; /* optional: snap effect */
+    flex: 0 0 250px;
+    scroll-snap-align: start;
 }
 
-
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .title1 {
-        font-size: 36px;
-    }
+    .title1 { font-size: 36px; }
     
     .about-header {
         margin-top: 60px;
         height: 100px;
     }
     
-    .hero-subtitle {
-        font-size: 16px;
-    }
+    .hero-subtitle { font-size: 16px; }
     
     .section-title {
         font-size: 28px;
@@ -674,37 +653,23 @@ a:hover {
         height: 220px;
     }
     
-    .profile-content h2 {
-        font-size: 28px;
-    }
+    .profile-content h2 { font-size: 28px; }
     
-    .skills-grid {
+    .skills-grid, .interests-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .timeline::before {
-        left: 20px;
-    }
-    
-    .timeline-item {
-        padding-left: 60px;
-    }
-    
+    .timeline::before { left: 20px; }
+    .timeline-item { padding-left: 60px; }
     .timeline-marker {
         left: 10px;
         width: 16px;
         height: 16px;
     }
-    
     .timeline-content::before {
         left: -8px;
         border-width: 8px;
-    }
-    
-    .interests-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
     }
 
     .theme-toggle {
@@ -726,12 +691,12 @@ a:hover {
     [data-theme="dark"] .theme-toggle-slider {
         transform: translateX(20px);
     }
+
+    .funfacts-grid .interest-card { flex: 0 0 220px; }
 }
 
 @media (max-width: 480px) {
-    .title1 {
-        font-size: 28px;
-    }
+    .title1 { font-size: 28px; }
     
     .about-header {
         margin-top: 60px;
@@ -739,14 +704,9 @@ a:hover {
         padding: 0 15px;
     }
     
-    .section-container {
-        padding: 0 15px;
-    }
+    .section-container { padding: 0 15px; }
     
-    .profile-section,
-    .skills-section,
-    .timeline-section,
-    .interests-section {
+    .profile-section, .skills-section, .timeline-section, .interests-section {
         padding: 60px 0;
     }
     
@@ -755,31 +715,28 @@ a:hover {
         height: 180px;
     }
     
-    .skill-category,
-    .timeline-content,
-    .interest-card {
+    .skill-category, .timeline-content, .interest-card {
         padding: 20px;
     }
     
-    .timeline-item {
-        padding-left: 50px;
+    .timeline-item { padding-left: 50px; }
+
+    .funfacts-grid {
+        gap: 15px;
     }
+    
+    .funfacts-grid .interest-card { flex: 0 0 200px; }
 }
 
-/* ========================================
-   ACCESSIBILITY & ANIMATION PREFERENCES
-   ======================================== */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
 }
 
-/* Focus styles for accessibility */
 .club-card:focus-within,
 .interest-card:focus-within,
 .skill-category:focus-within,
@@ -788,9 +745,7 @@ a:hover {
     outline-offset: 2px;
 }
 
-/* ========================================
-   PRINT STYLES
-   ======================================== */
+/* Print Styles */
 @media print {
     .about-header {
         background: none !important;
@@ -803,11 +758,7 @@ a:hover {
         text-shadow: none !important;
     }
     
-    .profile-image,
-    .interest-card,
-    .skill-category,
-    .timeline-content,
-    .club-card {
+    .profile-image, .interest-card, .skill-category, .timeline-content, .club-card {
         box-shadow: none !important;
     }
 
