@@ -2,6 +2,16 @@
    ABOUT PAGE - OPTIMIZED WITH DARK MODE
    ======================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Or if using local fonts */
+@font-face {
+    font-family: 'MyFont';
+    src: url('./fonts/MyFont.woff2') format('woff2'),
+         url('./fonts/MyFont.woff') format('woff');
+    font-display: swap;
+}
+
 /* CSS Custom Properties */
 :root {
     --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
